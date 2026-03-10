@@ -217,56 +217,49 @@ h1 + br + p {
 }
 
 @media (max-width: 768px) {
-    /* 1. Reset do Container Principal */
+    /* Reset Geral para ganhar largura */
     body {
-        padding: 0 10px 20px 10px !important; /* Margem mínima nas bordas do celular */
-        max-width: 100vw;
-        overflow-x: hidden; /* Evita que a tela balance para os lados */
+        padding: 0 10px 20px 10px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        overflow-x: hidden;
     }
 
-    /* 2. Navegação (Mantida a que você gosta) */
-    .menu-manuais ul {
-        gap: 5px;
-        padding: 0;
-    }
-    .menu-manuais a {
-        padding: 6px 8px;
-        font-size: 0.8rem;
-    }
-
-    /* 3. LIBERANDO ESPAÇO NO CONTEÚDO (O "Pulo do Gato") */
-    
-    /* Remove o recuo de parágrafos e listas que estão dentro de caixas */
-    details p, 
+    /* Tira o recuo "escada" de elementos uns dentro dos outros */
+    details details, 
     details ul, 
-    details li,
-    .timeline-content p {
-        padding-left: 0 !important;  /* Zera o recuo da esquerda */
-        padding-right: 0 !important; /* Zera o recuo da direita */
+    details ol {
+        padding-left: 15px !important; /* Recuo mínimo para hierarquia */
         margin-left: 0 !important;
-        margin-right: 0 !important;
+    }
+
+    /* Força parágrafos e itens de lista a usarem a largura toda */
+    details p, 
+    details li {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
         width: 100%;
-        text-align: left;
-    }
-
-    /* Faz com que a lista ocupe a largura toda sem a margem padrão do browser */
-    details ul {
-        margin-left: 1.2rem !important; /* Apenas o suficiente para a "bolinha" aparecer */
-    }
-
-    /* Ajusta o texto de boas vindas para não ter bordas largas */
-    h1 + br + p, .boas_vindas {
-        padding: 1rem !important;
-        border-left-width: 4px;
-        margin: 0 0 1rem 0 !important;
-        width: 100% !important;
         box-sizing: border-box;
     }
 
-    /* Expande os cards de detalhes */
-    details {
-        padding: 0.8rem !important;
-        width: 100% !important;
-        box-sizing: border-box;
+    /* Ajusta as caixas de boas vindas */
+    .boas_vindas {
+        width: auto !important;
+        margin: 10px 0 !important;
+        padding: 15px !important;
+    }
+
+    /* Melhora o visual do menu para não amontoar */
+    .menu-manuais ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    /* Faz as imagens dentro das listas não quebrarem o layout */
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
+
