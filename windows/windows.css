@@ -217,71 +217,77 @@ h1 + br + p {
 }
 
 @media (max-width: 768px) {
+    /* 1. Reset do Body: Remove o padding que "empurra" tudo para o meio */
     body {
-        padding: 0 15px 15px 15px; /* Margem suave nas bordas do celular */
+        padding: 0 8px 20px 8px; /* Reduzi de 20px para apenas 8px */
+        max-width: 100%; /* Garante que ocupe a tela toda */
     }
 
-    /* 1. Navegação (Mantida conforme você gostou) */
+    /* 2. Navegação: Mantida a que você gostou */
     .menu-manuais {
-        padding: 10px 0;
-        margin-bottom: 1.5rem;
+        padding: 8px 0;
+        margin-bottom: 1.2rem;
     }
-
     .menu-manuais ul {
         flex-direction: row;
         justify-content: center;
-        gap: 8px;
-        padding: 0 10px;
-        flex-wrap: wrap;
+        gap: 5px;
+        padding: 0 5px;
     }
-
     .menu-manuais a {
-        font-size: 0.85rem;
-        padding: 6px 10px;
+        font-size: 0.8rem;
+        padding: 6px 8px;
     }
-
     .item-sair {
         position: relative;
         right: 0;
-        margin-left: 5px;
+        margin-left: 2px;
     }
 
-    /* 2. Melhoria Crítica de Leitura (Onde estava o problema) */
+    /* 3. CONTEÚDO: Onde estava apertado */
     h1 {
-        font-size: 1.6rem;
-        padding: 0 10px;
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
     }
 
-    h1 + br + p, h1 + br + p + p {
-        padding: 1.2rem; /* Padding reduzido para o texto respirar */
-        font-size: 1rem;
-        text-align: left; /* Justificado no mobile costuma criar buracos brancos feios */
-        border-left-width: 3px; /* Borda mais fina para sobrar espaço */
-        width: 100%;
+    /* Caixa de boas vindas e parágrafos de topo */
+    h1 + br + p, 
+    h1 + br + p + p, 
+    .boas_vindas {
+        padding: 1rem !important; /* Reduzido de 2rem para 1rem */
+        margin: 0 0 1rem 0 !important; /* Remove margens laterais 'auto' */
+        width: 100% !important;
+        max-width: 100%;
+        font-size: 0.95rem;
+        text-align: left;
         box-sizing: border-box;
     }
 
-    /* Ajuste nos Acordeões (Details) para não esmagar o conteúdo */
+    /* Details (Acordeões): Onde o texto mais sofria */
     details {
-        padding: 0.8rem; /* Menos padding lateral */
+        padding: 0.7rem !important; /* Espaço interno da caixa azul */
+        margin-left: 0;
+        margin-right: 0;
     }
 
+    /* ESTE É O PONTO CHAVE: Removemos o recuo absurdo de 2rem (32px) lateral */
     details p, 
     details ul, 
     details li {
-        padding: 0.5rem 0.8rem; /* Reduzi drasticamente os 2rem originais */
+        padding: 0.5rem 0.2rem !important; /* Quase zero de recuo lateral */
+        margin: 0.5rem 0 !important;
         font-size: 0.95rem;
-        line-height: 1.5;
+        line-height: 1.4;
+        list-style-position: inside; /* Faz as bolinhas da lista ficarem coladas na esquerda */
     }
 
-    /* Ajuste na Timeline (se estiver usando) */
+    /* Timeline (se houver) */
     .timeline {
-        margin-left: 5px;
+        margin-left: 10px;
         padding-left: 15px;
     }
-
+    
     .timeline-content {
-        padding: 1rem;
+        padding: 0.8rem;
     }
 }
-
