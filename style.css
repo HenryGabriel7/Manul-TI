@@ -197,64 +197,60 @@ details p {
     transform: translateY(-5px);
 }
 
-/* --- 6. ANIMAÇÕES E RESPONSIVIDADE --- */
-@keyframes revealText {
-    0% { opacity: 0; transform: translateY(20px); filter: blur(10px); }
-    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
-}
+/* --- 6. AJUSTES PARA CELULARES E TABLETS (CORRIGIDO) --- */
 
-/* Ajustes para Tablets e Celulares (Até 768px) */
 @media (max-width: 768px) {
     body {
-        padding: 0 1rem 1rem 1rem;
-        max-width: 100%; /* Permite que o body use a tela toda */
+        padding: 0 10px 10px 10px;
     }
 
-    /* Ajuste do Menu */
+    /* 1. Nav mais fina e elegante */
+    .menu-manuais {
+        padding: 10px 0;
+        margin-bottom: 1.5rem;
+    }
+
+    /* 2. Mantém os itens LADO A LADO no mobile */
     .menu-manuais ul {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
+        flex-direction: row; /* Garante que fiquem na horizontal */
+        justify-content: center;
+        gap: 8px; /* Espaço reduzido entre os links */
+        padding: 0 10px;
+        flex-wrap: wrap; /* Se a tela for MUITO pequena, eles quebram linha suavemente */
     }
 
-    /* Resolve o problema do Botão Sair sobrepondo o texto no mobile */
-    .item-sair {
-        position: static; /* Remove o 'absolute' para ele ficar abaixo ou acima dos links */
-        margin-top: 10px;
-    }
-
-    /* Ajuste dos Textos de Boas-vindas */
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    h1 + br + p, 
-    h1 + br + p + p {
-        padding: 1.2rem;
-        text-align: left; /* Justificado em tela pequena gera buracos brancos no texto */
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Ajuste dos Cards de Manuais */
-    .container-manuais {
-        grid-template-columns: 1fr; /* Força uma única coluna */
-        gap: 15px;
-    }
-
-    .card-manual {
-        padding: 1.2rem;
-    }
-}
-
-/* Ajuste extra para Celulares Pequenos (Até 480px) */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
+    /* 3. Links menores para caberem melhor */
     .menu-manuais a {
         font-size: 0.85rem;
         padding: 6px 10px;
+    }
+
+    /* 4. Reposiciona o botão Sair para não quebrar o layout */
+    .item-sair {
+        position: relative; /* Sai do absolute para não sobrepor */
+        right: 0;
+        margin-left: 5px;
+    }
+
+    .btn-sair-img img {
+        width: 18px; /* Ícone um pouco menor no mobile */
+        height: 18px;
+    }
+
+    /* 5. Ajuste dos cards para não ficarem gigantes */
+    .container-manuais {
+        grid-template-columns: 1fr; /* Um card por linha no celular */
+        padding: 0 10px;
+    }
+
+    /* 6. Textos de boas-vindas */
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h1 + br + p, h1 + br + p + p {
+        padding: 1rem;
+        font-size: 0.95rem;
+        text-align: left;
     }
 }
