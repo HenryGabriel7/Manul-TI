@@ -203,13 +203,41 @@ details p {
     100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
-@media (max-width: 600px) {
-    .menu-manuais ul {
-        flex-wrap: wrap;
-        gap: 10px;
+/* Configurações para Celulares (Telas até 768px) */
+@media (max-width: 768px) {
+    /* Faz o menu (nav) empilhar verticalmente */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
     }
-    .item-sair {
-        position: static; /* No mobile ele volta para a lista comum para não quebrar o layout */
-        margin-top: 10px;
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Faz os cards de "Configuração Windows", "Linux", etc., 
+       ocuparem a largura total da tela */
+    .container, .grid-cards { 
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .card {
+        width: 100% !important; /* Ajusta os quadros para largura total */
+        margin-bottom: 20px;
+    }
+
+    /* Ajusta o tamanho da fonte do título principal */
+    h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    /* Ajusta imagens para não estourarem a largura */
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
