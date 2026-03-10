@@ -198,58 +198,28 @@ p.boas_vindas {
     100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
+/* --- 7. RESPONSIVIDADE --- */
 @media (max-width: 768px) {
-    body {
-        padding: 0 10px 10px 10px;
-    }
-
-    /* 1. Nav mais fina e elegante */
-    .menu-manuais {
-        padding: 10px 0;
-        margin-bottom: 1.5rem;
-    }
-
-    /* 2. Mantém os itens LADO A LADO no mobile */
     .menu-manuais ul {
-        flex-direction: row; /* Garante que fiquem na horizontal */
-        justify-content: center;
-        gap: 8px; /* Espaço reduzido entre os links */
-        padding: 0 10px;
-        flex-wrap: wrap; /* Se a tela for MUITO pequena, eles quebram linha suavemente */
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
-    /* 3. Links menores para caberem melhor */
-    .menu-manuais a {
-        font-size: 0.85rem;
-        padding: 6px 10px;
-    }
-
-    /* 4. Reposiciona o botão Sair para não quebrar o layout */
     .item-sair {
-        position: relative; /* Sai do absolute para não sobrepor */
+        position: relative;
         right: 0;
         margin-left: 5px;
     }
 
-    .btn-sair-img img {
-        width: 18px; /* Ícone um pouco menor no mobile */
-        height: 18px;
-    }
+    h1 { font-size: 1.6rem; }
 
-    /* 5. Ajuste dos cards para não ficarem gigantes */
-    .container-manuais {
-        grid-template-columns: 1fr; /* Um card por linha no celular */
-        padding: 0 10px;
-    }
-
-    /* 6. Textos de boas-vindas */
-    h1 {
-        font-size: 1.6rem;
-    }
-
-    h1 + br + p, h1 + br + p + p {
+    .boas_vindas {
         padding: 1rem;
         font-size: 0.95rem;
         text-align: left;
+    }
+
+    .timeline {
+        margin-left: 20px; /* Garante espaço para a bolinha no mobile */
     }
 }
