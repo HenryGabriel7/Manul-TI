@@ -197,47 +197,64 @@ details p {
     transform: translateY(-5px);
 }
 
-/* --- 6. ANIMAÇÕES E MOBILE --- */
+/* --- 6. ANIMAÇÕES E RESPONSIVIDADE --- */
 @keyframes revealText {
     0% { opacity: 0; transform: translateY(20px); filter: blur(10px); }
     100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
-/* Configurações para Celulares (Telas até 768px) */
+/* Ajustes para Tablets e Celulares (Até 768px) */
 @media (max-width: 768px) {
-    /* Faz o menu (nav) empilhar verticalmente */
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
+    body {
+        padding: 0 1rem 1rem 1rem;
+        max-width: 100%; /* Permite que o body use a tela toda */
     }
 
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    /* Faz os cards de "Configuração Windows", "Linux", etc., 
-       ocuparem a largura total da tela */
-    .container, .grid-cards { 
-        display: flex;
+    /* Ajuste do Menu */
+    .menu-manuais ul {
         flex-direction: column;
+        gap: 10px;
         padding: 10px;
     }
 
-    .card {
-        width: 100% !important; /* Ajusta os quadros para largura total */
-        margin-bottom: 20px;
+    /* Resolve o problema do Botão Sair sobrepondo o texto no mobile */
+    .item-sair {
+        position: static; /* Remove o 'absolute' para ele ficar abaixo ou acima dos links */
+        margin-top: 10px;
     }
 
-    /* Ajusta o tamanho da fonte do título principal */
+    /* Ajuste dos Textos de Boas-vindas */
     h1 {
         font-size: 1.8rem;
-        text-align: center;
     }
 
-    /* Ajusta imagens para não estourarem a largura */
-    img {
+    h1 + br + p, 
+    h1 + br + p + p {
+        padding: 1.2rem;
+        text-align: left; /* Justificado em tela pequena gera buracos brancos no texto */
         max-width: 100%;
-        height: auto;
+        box-sizing: border-box;
+    }
+
+    /* Ajuste dos Cards de Manuais */
+    .container-manuais {
+        grid-template-columns: 1fr; /* Força uma única coluna */
+        gap: 15px;
+    }
+
+    .card-manual {
+        padding: 1.2rem;
+    }
+}
+
+/* Ajuste extra para Celulares Pequenos (Até 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu-manuais a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
     }
 }
