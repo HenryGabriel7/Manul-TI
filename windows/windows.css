@@ -217,77 +217,56 @@ h1 + br + p {
 }
 
 @media (max-width: 768px) {
-    /* 1. Reset do Body: Remove o padding que "empurra" tudo para o meio */
+    /* 1. Reset do Container Principal */
     body {
-        padding: 0 8px 20px 8px; /* Reduzi de 20px para apenas 8px */
-        max-width: 100%; /* Garante que ocupe a tela toda */
+        padding: 0 10px 20px 10px !important; /* Margem mínima nas bordas do celular */
+        max-width: 100vw;
+        overflow-x: hidden; /* Evita que a tela balance para os lados */
     }
 
-    /* 2. Navegação: Mantida a que você gostou */
-    .menu-manuais {
-        padding: 8px 0;
-        margin-bottom: 1.2rem;
-    }
+    /* 2. Navegação (Mantida a que você gosta) */
     .menu-manuais ul {
-        flex-direction: row;
-        justify-content: center;
         gap: 5px;
-        padding: 0 5px;
+        padding: 0;
     }
     .menu-manuais a {
-        font-size: 0.8rem;
         padding: 6px 8px;
-    }
-    .item-sair {
-        position: relative;
-        right: 0;
-        margin-left: 2px;
+        font-size: 0.8rem;
     }
 
-    /* 3. CONTEÚDO: Onde estava apertado */
-    h1 {
-        font-size: 1.5rem;
-        margin-top: 1.5rem;
-    }
-
-    /* Caixa de boas vindas e parágrafos de topo */
-    h1 + br + p, 
-    h1 + br + p + p, 
-    .boas_vindas {
-        padding: 1rem !important; /* Reduzido de 2rem para 1rem */
-        margin: 0 0 1rem 0 !important; /* Remove margens laterais 'auto' */
-        width: 100% !important;
-        max-width: 100%;
-        font-size: 0.95rem;
+    /* 3. LIBERANDO ESPAÇO NO CONTEÚDO (O "Pulo do Gato") */
+    
+    /* Remove o recuo de parágrafos e listas que estão dentro de caixas */
+    details p, 
+    details ul, 
+    details li,
+    .timeline-content p {
+        padding-left: 0 !important;  /* Zera o recuo da esquerda */
+        padding-right: 0 !important; /* Zera o recuo da direita */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100%;
         text-align: left;
+    }
+
+    /* Faz com que a lista ocupe a largura toda sem a margem padrão do browser */
+    details ul {
+        margin-left: 1.2rem !important; /* Apenas o suficiente para a "bolinha" aparecer */
+    }
+
+    /* Ajusta o texto de boas vindas para não ter bordas largas */
+    h1 + br + p, .boas_vindas {
+        padding: 1rem !important;
+        border-left-width: 4px;
+        margin: 0 0 1rem 0 !important;
+        width: 100% !important;
         box-sizing: border-box;
     }
 
-    /* Details (Acordeões): Onde o texto mais sofria */
+    /* Expande os cards de detalhes */
     details {
-        padding: 0.7rem !important; /* Espaço interno da caixa azul */
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    /* ESTE É O PONTO CHAVE: Removemos o recuo absurdo de 2rem (32px) lateral */
-    details p, 
-    details ul, 
-    details li {
-        padding: 0.5rem 0.2rem !important; /* Quase zero de recuo lateral */
-        margin: 0.5rem 0 !important;
-        font-size: 0.95rem;
-        line-height: 1.4;
-        list-style-position: inside; /* Faz as bolinhas da lista ficarem coladas na esquerda */
-    }
-
-    /* Timeline (se houver) */
-    .timeline {
-        margin-left: 10px;
-        padding-left: 15px;
-    }
-    
-    .timeline-content {
-        padding: 0.8rem;
+        padding: 0.8rem !important;
+        width: 100% !important;
+        box-sizing: border-box;
     }
 }
