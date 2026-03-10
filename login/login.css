@@ -115,8 +115,53 @@ h1 {
     margin-bottom: 1rem;
     text-align: left;
     display: none; /* Começa escondida */
+
+    /* --- AJUSTES PARA DISPOSITIVOS MÓVEIS --- */
+
+@media (max-width: 480px) {
+    body {
+        /* Permite scroll se o teclado do celular abrir e ocupar espaço */
+        height: auto;
+        min-height: 100vh;
+        padding: 20px; 
+        align-items: flex-start; /* Alinha ao topo para não sumir conteúdo com o teclado */
+        padding-top: 10vh; 
+    }
+
+    .login-container {
+        padding: 1.5rem; /* Reduz o preenchimento interno para ganhar espaço */
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Título ligeiramente menor */
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group input {
+        padding: 14px; /* Aumenta a área de toque para facilitar a digitação */
+        font-size: 1rem; /* Evita que o iOS dê zoom automático no input */
+    }
+
+    .btn-login {
+        padding: 14px; /* Botão mais robusto para o polegar */
+        font-size: 1.1rem;
+    }
+
+    .form-footer a {
+        display: block; /* Empilha os links se houver mais de um */
+        padding: 10px 0;
+        font-size: 0.9rem;
+    }
+}
     padding: 8px;
     background-color: rgba(255, 77, 77, 0.1);
     border-radius: 4px;
     border-left: 3px solid #ff4d4d;
+
 }
