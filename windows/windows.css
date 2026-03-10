@@ -1,276 +1,120 @@
+/* --- 1. AJUSTES GERAIS --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: white;
     max-width: 50rem;
     margin: 0 auto;
-    padding: 1.25rem;
+    padding: 0 1rem 1.25rem 1rem; /* Ajustado para não colar nas bordas */
     background-color: #222222;
-    padding-top: 0
 }
 
-/* --- NAVEGAÇÃO (VERSÃO CORRIGIDA E OTIMIZADA) --- */
-
+/* --- 2. NAVEGAÇÃO RESPONSIVA --- */
 .menu-manuais {
     background-color: #1a1a1a;
     border-bottom: 2px solid #1b89d377;
-    padding: 15px 0;
-    margin-bottom: 2rem;
+    padding: 10px 0;
+    margin-bottom: 1.5rem;
     border-radius: 0 0 10px 10px;
-    position: relative; /* Base para o botão de sair */
     width: 100%;
 }
 
 .menu-manuais ul {
     list-style: none;
     margin: 0;
-    padding: 0 60px; /* Padding maior nas laterais para o botão sair não sobrepor */
+    padding: 0 10px;
     display: flex;
-    justify-content: center; /* Centraliza Home, Novidades, etc */
+    flex-direction: row;
+    flex-wrap: wrap; /* Importante para não quebrar em telas pequenas */
+    justify-content: center;
     align-items: center;
-    gap: 20px;
-    width: 100%;
-    box-sizing: border-box;
+    gap: 10px;
 }
 
 .menu-manuais a {
     color: #cccccc;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.95rem;
-    padding: 8px 15px;
+    font-size: 0.85rem;
+    padding: 6px 10px;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
-.menu-manuais a:hover, 
-.menu-manuais a.active {
-    color: white;
-    background-color: #1b89d377;
-}
-
-/* --- BOTÃO SAIR (FIXADO À DIREITA) --- */
 .item-sair {
-    position: absolute;
-    right: 15px; /* Alinhado à extrema direita da nav */
-    top: 50%;
-    transform: translateY(-50%); /* Centraliza verticalmente na barra */
     display: flex;
     align-items: center;
 }
 
-.btn-sair-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px !important;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.btn-sair-img img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-    filter: invert(1) brightness(2); /* Ícone branco */
-    opacity: 0.7;
-    transition: all 0.3s ease;
-}
-
-/* Hover do botão de sair (Efeito avermelhado) */
-.btn-sair-img:hover {
-    background-color: rgba(255, 77, 77, 0.2) !important;
-}
-
-.btn-sair-img:hover img {
-    opacity: 1;
-    filter: invert(1) brightness(2) drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
-    transform: scale(1.1);
-}
-
+/* --- 3. CONTEÚDO TÉCNICO (DETAILS E LISTAS) --- */
 details {
-    background-color:  #277db677;    
-    border-left: 0.25rem solid ;
+    background-color: #277db677;    
+    border-left: 0.25rem solid #1b89d3;
     border-radius: 0.3rem;
-    margin-bottom: 0.6rem;
-    padding:1rem;
-    transition: all 0.3s ease;
-
+    margin-bottom: 0.8rem;
+    padding: 1rem;
 }
 
-details:not([open]):hover {
-    background-color: #33a6f377;
-}
-
-details[open] {
-    background-color: #277db677; 
-    cursor: pointer;
-}
-
-details p, 
-details ul, 
-details li {
-    background-color: transparent !important;
-    border: none !important;
+/* Ajuste de recuo para listas e parágrafos internos */
+details p, details ul, details ol {
+    padding: 0.5rem 0.5rem 0.5rem 1rem; /* Reduzido para ganhar espaço no mobile */
     margin: 0.5rem 0;
-    padding-left: 0.5rem;  
-    padding: 0rem 2rem; 
 }
 
-details[open], 
-details[open] * {
-    cursor: pointer !important;
-    pointer-events: auto !important;
-}
-
-details summary {
-    cursor: pointer;
-    font-weight: bold;
-    list-style: none;
-    outline: none;
-    padding: 0.1rem 1rem;
-}
-
-details summary::-webkit-details-marker {
-    display: none;
-}
-
-h1{
-    text-align: center;
-    margin-top: 2.5rem;   
-    margin-bottom: 1.5rem; 
-    color: #ffffff;        
-}
-
-
+/* Estilo para os sub-tópicos (azul mais escuro) */
 .sub_topico {
-    background-color: #1c618f77; 
-    color: #ffffff;               
+    background-color: #1c618f77;
+    margin-top: 10px;
 }
-
-
-.sub_topico:hover {
-    background-color: #33a6f377;
-}
-
-.sub_topico[open] {
-    background-color: #1c618f77; 
-}
-
-.caso{
-    all: unset;
-    display: block;
-    pointer-events: auto;
-}
-
-.caso summary{
-    all: unset;
-    display: inline-block;
-    pointer-events: auto;
-    cursor: pointer;
-    font-weight: bold;
-    list-style: none;
-}
-
-.boas_vindas {
-    text-align: center;
-}
-
-
-h1 + br + p, 
-h1 + br + p + p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 
 h1 {
     text-align: center;
-    margin-top: 2.5rem;   
-    margin-bottom: 0.5rem; 
-    color: #ffffff;
-    font-size: 2.2rem;
+    font-size: 1.8rem; /* Tamanho adaptável */
     text-transform: uppercase;
-    letter-spacing: 1px;
+    margin: 1.5rem 0;
 }
 
-h1 + br + p, 
-h1 + br + p + p {
-    background-color: #ffffff0a; 
-    padding: 1.5rem 2rem;
+.boas_vindas {
+    background-color: #ffffff0a;
+    padding: 1rem;
     border-radius: 0.5rem;
-    border: 1px solid #333;
-    margin: 0 auto 1rem auto;
-    max-width: 45rem;
-    text-align: justify;
+    border-left: 4px solid #ffffff;
     font-style: italic;
-    color: #cccccc;
-    border-left: 4px solid #ffffff; 
+    font-size: 0.95rem;
+    text-align: left; /* Melhor para leitura técnica */
 }
 
-h1 + br + p {
-    font-size: 1.1rem;
-    color: #ffffff;
-    margin-bottom: 0; 
-    border-bottom-left-radius: 0;
-}
-
-/* --- 6. AJUSTES PARA CELULARES E TABLETS (CORRIGIDO) --- */
-
+/* --- 4. MEDIA QUERIES (A MÁGICA PARA CELULAR) --- */
 @media (max-width: 768px) {
-    body {
-        padding: 0 10px 10px 10px;
-    }
-
-    /* 1. Nav mais fina e elegante */
-    .menu-manuais {
-        padding: 10px 0;
-        margin-bottom: 1.5rem;
-    }
-
-    /* 2. Mantém os itens LADO A LADO no mobile */
-    .menu-manuais ul {
-        flex-direction: row; /* Garante que fiquem na horizontal */
-        justify-content: center;
-        gap: 8px; /* Espaço reduzido entre os links */
-        padding: 0 10px;
-        flex-wrap: wrap; /* Se a tela for MUITO pequena, eles quebram linha suavemente */
-    }
-
-    /* 3. Links menores para caberem melhor */
-    .menu-manuais a {
-        font-size: 0.85rem;
-        padding: 6px 10px;
-    }
-
-    /* 4. Reposiciona o botão Sair para não quebrar o layout */
-    .item-sair {
-        position: relative; /* Sai do absolute para não sobrepor */
-        right: 0;
-        margin-left: 5px;
-    }
-
-    .btn-sair-img img {
-        width: 18px; /* Ícone um pouco menor no mobile */
-        height: 18px;
-    }
-
-    /* 5. Ajuste dos cards para não ficarem gigantes */
-    .container-manuais {
-        grid-template-columns: 1fr; /* Um card por linha no celular */
-        padding: 0 10px;
-    }
-
-    /* 6. Textos de boas-vindas */
     h1 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
-    h1 + br + p, h1 + br + p + p {
-        padding: 1rem;
-        font-size: 0.95rem;
-        text-align: left;
+    /* Reduz o recuo excessivo de listas em telas pequenas */
+    details p, details ul, details ol {
+        padding-left: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Ajuste para listas numeradas não ficarem fora da tela */
+    ol, ul {
+        padding-left: 1.2rem;
+    }
+
+    .menu-manuais a {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Esconde o texto "Home/Windows" se quiser usar apenas ícones, 
+       ou apenas diminui a fonte ao extremo */
+    .menu-manuais ul {
+        gap: 5px;
+    }
+    
+    details summary h2 {
+        font-size: 1.1rem;
     }
 }
