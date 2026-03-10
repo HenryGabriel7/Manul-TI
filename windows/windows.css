@@ -217,56 +217,54 @@ h1 + br + p {
 }
 
 @media (max-width: 768px) {
-    /* 1. Faz o texto aproveitar as bordas da tela */
+    /* 1. Impede o transbordamento global */
+    html, body {
+        max-width: 100% !important;
+        overflow-x: hidden; /* Corta qualquer tentativa de vazar pra lateral */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
-        padding: 0 12px 30px 12px !important; /* Respiro mínimo nas laterais */
-        line-height: 1.5; /* Melhora a leitura do texto denso */
+        padding: 0 10px 30px 10px !important;
     }
 
-    /* 2. Ajusta os cards de boas vindas */
-    .boas_vindas {
+    /* 2. Aplica a regra de ouro em todos os elementos */
+    * {
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Ajusta o conteúdo para "abraçar" a parede do celular sem ultrapassar */
+    .boas_vindas, 
+    details, 
+    .sub_topico {
         width: 100% !important;
-        margin: 10px 0 !important;
-        padding: 15px !important;
-        box-sizing: border-box;
-        font-size: 0.95rem;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 12px !important;
+        display: block; /* Garante que se comporte como bloco */
     }
 
-    /* 3. ACHATAMENTO (Ganha espaço lateral no conteúdo) */
-    /* Removemos o recuo acumulado que deixa o texto "curtinho" */
-    details {
-        padding: 10px !important;
-        margin-bottom: 10px;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    /* Remove a margem esquerda exagerada das listas no mobile */
+    /* 4. Corrige as listas para não empurrarem o texto pra fora */
     details ul, 
     details ol {
-        padding-left: 20px !important; /* Espaço apenas para a bolinha/número */
-        margin-left: 0 !important;
+        padding-left: 20px !important; /* Espaço apenas para as bolinhas/números */
+        margin-left: 5px !important;
+        width: auto !important;
     }
 
-    /* Faz com que sub-tópicos e parágrafos usem 100% da largura */
-    details p, 
-    details li, 
-    .sub_topico {
-        padding-left: 0 !important;
-        margin-left: 0 !important;
-        font-size: 0.95rem;
+    details li {
+        word-wrap: break-word; /* Força palavras longas a quebrarem em vez de vazar */
+        overflow-wrap: break-word;
+        white-space: normal;
+        margin-bottom: 8px;
     }
 
-    /* Dá um destaque visual para os sub-tópicos internos */
-    .sub_topico {
-        border-left: 2px solid #ccc; /* Uma linha sutil para indicar hierarquia */
-        margin-top: 10px !important;
-        background: rgba(0,0,0,0.02); /* Fundo leve para separar do tópico pai */
+    /* 5. Ajusta o texto de títulos longos */
+    h1, h2, h3 {
+        word-wrap: break-word;
+        max-width: 100%;
     }
-
-    /* Títulos menores para caber em uma linha só no celular */
-    h1 { font-size: 1.6rem !important; }
-    h2 { font-size: 1.2rem !important; }
-    h3 { font-size: 1.1rem !important; }
 }
-
