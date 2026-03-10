@@ -217,49 +217,56 @@ h1 + br + p {
 }
 
 @media (max-width: 768px) {
-    /* Reset Geral para ganhar largura */
+    /* 1. Faz o texto aproveitar as bordas da tela */
     body {
-        padding: 0 10px 20px 10px !important;
-        margin: 0 !important;
+        padding: 0 12px 30px 12px !important; /* Respiro mínimo nas laterais */
+        line-height: 1.5; /* Melhora a leitura do texto denso */
+    }
+
+    /* 2. Ajusta os cards de boas vindas */
+    .boas_vindas {
         width: 100% !important;
-        overflow-x: hidden;
+        margin: 10px 0 !important;
+        padding: 15px !important;
+        box-sizing: border-box;
+        font-size: 0.95rem;
     }
 
-    /* Tira o recuo "escada" de elementos uns dentro dos outros */
-    details details, 
-    details ul, 
-    details ol {
-        padding-left: 15px !important; /* Recuo mínimo para hierarquia */
-        margin-left: 0 !important;
-    }
-
-    /* Força parágrafos e itens de lista a usarem a largura toda */
-    details p, 
-    details li {
-        margin-left: 0 !important;
-        padding-left: 0 !important;
-        width: 100%;
+    /* 3. ACHATAMENTO (Ganha espaço lateral no conteúdo) */
+    /* Removemos o recuo acumulado que deixa o texto "curtinho" */
+    details {
+        padding: 10px !important;
+        margin-bottom: 10px;
+        width: 100% !important;
         box-sizing: border-box;
     }
 
-    /* Ajusta as caixas de boas vindas */
-    .boas_vindas {
-        width: auto !important;
-        margin: 10px 0 !important;
-        padding: 15px !important;
+    /* Remove a margem esquerda exagerada das listas no mobile */
+    details ul, 
+    details ol {
+        padding-left: 20px !important; /* Espaço apenas para a bolinha/número */
+        margin-left: 0 !important;
     }
 
-    /* Melhora o visual do menu para não amontoar */
-    .menu-manuais ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 10px 0;
+    /* Faz com que sub-tópicos e parágrafos usem 100% da largura */
+    details p, 
+    details li, 
+    .sub_topico {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        font-size: 0.95rem;
     }
 
-    /* Faz as imagens dentro das listas não quebrarem o layout */
-    img {
-        max-width: 100%;
-        height: auto;
+    /* Dá um destaque visual para os sub-tópicos internos */
+    .sub_topico {
+        border-left: 2px solid #ccc; /* Uma linha sutil para indicar hierarquia */
+        margin-top: 10px !important;
+        background: rgba(0,0,0,0.02); /* Fundo leve para separar do tópico pai */
     }
+
+    /* Títulos menores para caber em uma linha só no celular */
+    h1 { font-size: 1.6rem !important; }
+    h2 { font-size: 1.2rem !important; }
+    h3 { font-size: 1.1rem !important; }
 }
 
