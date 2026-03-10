@@ -86,22 +86,7 @@ body {
     transform: scale(1.1);
 }
 
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 650px) {
-    .menu-manuais ul {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 0 10px; /* Reduz padding no mobile */
-    }
-    
-    .item-sair {
-        position: static; /* No mobile, ele entra no fluxo normal da lista */
-        transform: none;
-        margin-top: 10px;
-        justify-content: center;
-        width: 100%;
-    }
-}
+
 
 details {
     background-color:  #277db677;    
@@ -286,3 +271,4 @@ h1 + br + p {
         text-align: left;
     }
 }
+
