@@ -217,54 +217,48 @@ h1 + br + p {
 }
 
 @media (max-width: 768px) {
-    /* 1. Impede o transbordamento global */
+    /* 1. Força o container principal a ficar dentro da tela */
     html, body {
-        max-width: 100% !important;
-        overflow-x: hidden; /* Corta qualquer tentativa de vazar pra lateral */
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        overflow-x: hidden !important; /* Mata a rolagem lateral */
+        width: 100vw !important;
+        position: relative;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     body {
-        padding: 0 10px 30px 10px !important;
+        /* Adicionamos um respiro nas duas laterais para o card não colar na parede */
+        padding: 10px 15px 30px 15px !important; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza tudo o que for flex */
     }
 
-    /* 2. Aplica a regra de ouro em todos os elementos */
-    * {
-        box-sizing: border-box !important;
-    }
-
-    /* 3. Ajusta o conteúdo para "abraçar" a parede do celular sem ultrapassar */
-    .boas_vindas, 
-    details, 
-    .sub_topico {
-        width: 100% !important;
+    /* 2. Ajuste dos Cards (Boas Vindas e Details) */
+    .boas_vindas, details {
+        width: 100% !important; /* Ocupa a largura disponível (menos o padding do body) */
         max-width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
-        padding: 12px !important;
-        display: block; /* Garante que se comporte como bloco */
+        box-sizing: border-box !important; /* Fundamental para o padding não expulsar o card */
+        position: relative;
+        left: 0 !important; /* Garante que não esteja deslocado */
     }
 
-    /* 4. Corrige as listas para não empurrarem o texto pra fora */
-    details ul, 
-    details ol {
-        padding-left: 20px !important; /* Espaço apenas para as bolinhas/números */
-        margin-left: 5px !important;
-        width: auto !important;
-    }
-
-    details li {
-        word-wrap: break-word; /* Força palavras longas a quebrarem em vez de vazar */
-        overflow-wrap: break-word;
-        white-space: normal;
-        margin-bottom: 8px;
-    }
-
-    /* 5. Ajusta o texto de títulos longos */
-    h1, h2, h3 {
+    /* 3. Ajuste do Título (para não vazar) */
+    h1 {
+        width: 100%;
+        text-align: center;
+        padding: 0 10px;
+        box-sizing: border-box;
         word-wrap: break-word;
-        max-width: 100%;
+        font-size: 1.5rem !important;
+    }
+
+    /* 4. Ajuste das Listas internas para não empurrarem o texto */
+    details ul, details ol {
+        padding-left: 20px !important;
+        margin-left: 5px !important;
+        width: calc(100% - 25px) !important;
     }
 }
