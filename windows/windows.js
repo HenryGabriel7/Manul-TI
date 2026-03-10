@@ -16,12 +16,3 @@ window.onpageshow = function(event) {
     }
 };
 
-
-    verificarAcesso();
-    document.addEventListener('click', function(e) {
-    if (e.target.closest('summary')) return;
-    const d = e.target.closest('details[open]');
-    if (d) {
-        d.removeAttribute('open');
-    }
-});
