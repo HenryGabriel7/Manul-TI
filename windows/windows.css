@@ -217,48 +217,71 @@ h1 + br + p {
 }
 
 @media (max-width: 768px) {
-    /* 1. Força o container principal a ficar dentro da tela */
+    /* 1. BLINDAGEM CONTRA VAZAMENTO */
     html, body {
-        overflow-x: hidden !important; /* Mata a rolagem lateral */
-        width: 100vw !important;
-        position: relative;
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important; /* Impede a rolagem lateral */
         margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. CONTEÚDO (Dando respiro sem vazar) */
+    body {
+        /* Padding apenas nas laterais para o card não colar na tela */
+        padding: 0 12px 40px 12px !important; 
+    }
+
+    /* 3. RESET UNIVERSAL DE LARGURA */
+    /* Isso garante que NENHUM elemento (incluindo a nav) tente ser maior que a tela */
+    *, *:before, *:after {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+
+    /* 4. AJUSTE DO TÍTULO E BOAS VINDAS */
+    h1 {
+        font-size: 1.4rem !important;
+        margin: 20px 0 !important;
+        text-align: center;
+    }
+
+    .boas_vindas, details {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 15px !important;
+        display: block !important;
+        border-radius: 8px; /* Deixa o visual mais moderno no mobile */
+    }
+
+    /* 5. RESOLVENDO O TEXTO "CURTINHO" (Hierarquia Achatada) */
+    /* Removemos os recuos exagerados das listas dentro de details */
+    details ul, details ol {
+        padding-left: 1.2rem !important; /* Espaço mínimo para os ícones/números */
+        margin-left: 0 !important;
+    }
+
+    details p, details li {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    /* 6. PROTEÇÃO DA NAV (Para ela não quebrar ou sumir) */
+    .menu-manuais {
+        width: 100% !important;
+        margin: 0 0 20px 0 !important;
         padding: 0 !important;
     }
 
-    body {
-        /* Adicionamos um respiro nas duas laterais para o card não colar na parede */
-        padding: 10px 15px 30px 15px !important; 
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centraliza tudo o que for flex */
-    }
-
-    /* 2. Ajuste dos Cards (Boas Vindas e Details) */
-    .boas_vindas, details {
-        width: 100% !important; /* Ocupa a largura disponível (menos o padding do body) */
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        box-sizing: border-box !important; /* Fundamental para o padding não expulsar o card */
-        position: relative;
-        left: 0 !important; /* Garante que não esteja deslocado */
-    }
-
-    /* 3. Ajuste do Título (para não vazar) */
-    h1 {
-        width: 100%;
-        text-align: center;
-        padding: 0 10px;
-        box-sizing: border-box;
-        word-wrap: break-word;
-        font-size: 1.5rem !important;
-    }
-
-    /* 4. Ajuste das Listas internas para não empurrarem o texto */
-    details ul, details ol {
-        padding-left: 20px !important;
-        margin-left: 5px !important;
-        width: calc(100% - 25px) !important;
+    /* Se a nav estiver vazando, este comando força ela a se ajustar */
+    .menu-manuais ul {
+        display: flex !important;
+        justify-content: space-around !important;
+        padding: 10px 0 !important;
+        list-style: none !important;
     }
 }
