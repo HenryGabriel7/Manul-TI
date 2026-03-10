@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+   
+    <script src="script.js"></script>
+    <script>verificarAcesso();</script>
+    
+</head>
+<body>
+
+    <nav class="menu-manuais">
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="novidades/novidades.html">Novidades</a></li>
+            <li><a href="links/links.html">Links</a></li>
+            <li class="item-sair">
+            <a href="login/login.html" onclick="logout()" class="btn-sair-img" title="Sair do Portal">
+                <img src="assets/sair.png" alt="Sair">
+            </a>
+        </li>
+        </ul>
+    </nav>
+
+   <h1>
+    <span class="efeito-revelar">Portal de TI</span>
+    </h1>
+    <br>
+    <p class="boas_vindas">
+        Bem-vindo(a) à nossa Central de Documentação Técnica de TI! <br>
+        Este portal reúne os manuais, guias e procedimentos necessários para apoiar você nas operações e manutenções da nossa instituição.
+    </p>
+    <p class="boas_vindas">
+        Lembre-se: o seu julgamento crítico e conhecimento técnico são essenciais. Contamos com você! :D
+    </p>
+    <br>
+    <div class="container-manuais">
+        <a href="windows/windows.html" class="card-manual">
+            <h2>Configuração Windows</h2>
+            <p>Guia padrão para estações de trabalho.</p>
+        </a>
+        
+        <a href="linux.html" class="card-manual">
+            <h2>Configuração Linux</h2>
+            <p>Procedimentos para servidores e dev machines.</p>
+        </a>
+
+        <a href="impressoras.html" class="card-manual">
+            <h2>Impressoras</h2>
+            <p>Instalação de drivers e configuração de rede (IP/Print Server).</p>
+        </a>
+
+    </div>
+</body>
+
+</html>
+

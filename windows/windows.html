@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Padrão Configuração de Computadores</title>
+    <link rel="stylesheet" href="windows.css">
+    <script src="windows.js"></script>
+</head>
+
+<body>
+       <nav class="menu-manuais">
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#" class="active">Windows</a></li>
+        <li><a href="../novidades/novidades.html">Novidades</a></li>
+        <li><a href="../links/links.html">Links</a></li>
+        <li class="item-sair">
+            <a href="../login/login.html" onclick="logout()" class="btn-sair-img" title="Sair do Portal">
+                <img src="../assets/sair.png" alt="Sair">
+            </a>
+        </li>
+    </ul>
+</nav>
+    <h1>
+        <span class="efeito-revelar">Configuração dos Computadores Windows</span>
+    </h1>
+    <br>
+    <p class="boas_vindas">Bem Vindo ao manual oficial do TI para a configuração de computadores Windows!<br>
+        Esse manual serve pra te guiar pra quando você for configurar computadores de trabalho Windows pra qualquer
+        funcionário ou setor aqui na instituição!</p>
+    <p class="boas_vindas">Mas lembre-se que, por mais completo que esse manual seja, a única pessoa capaz de saber
+        quais instruções e
+        opções devem ser realizadas em cada caso é você, não esqueça disso :D </p>
+    <br>
+    <details>
+        <summary>
+            <h2>I. Sobre Formatação/Restauração</h2>
+        </summary>
+        <p>Nem sempre vai ser necessário fazer isso, mas, é surpreendentemente comum, então, não há lugar melhor pra
+            começar! Esse passo por si só é bem simples! A pior parte aqui é ter que esperar certas telas de
+            carregamento, enfim, vamos lá:</p>
+        <h3>Antes de Formatar:</h3>
+        <ul>
+            <li>Verifique (e anote), o Nome Atual do Computador, vá em Configurações>Sistema>Sobre (o jeito mais rápido
+                é
+                apertando teclas Windows + I), o nome do computador sempre segue o padrão USB-IAP-[SETOR]-[NÚMERO] é por
+                isso que você está procurando</li>
+            <li>Verifique a Versão do Windows, é no mesmo lugar, além de identificar se é 10 ou 11, verifique a edição
+                dele, isso é, Windows 10/11 Pro, Education, Pro Education, Home... Isso é tão importante quanto a
+                versão, talvez seja até mais importante!</li>
+            <li>Verifique o nome do Usuário atual do Computador, (<b>Isso pode ser pulado se o computador for ser
+                    destinado a outro usuário</b>, então pense comigo... O computador que você está prestes a formatar,
+                vai voltar pro mesmo usuário que o estava usando antes? Se ele for, você precisa anotar esse nome, se
+                não, isso é menos importante) normalmente o nome do usuário fica no formato {nome}.{sobrenome}, olhar o
+                usuário no Windows vai te mostrar um nome gigante que começa com "USB - IAP" não é isso que queremos, um
+                jeito simples de achar o que queremos é abrir algum programa do Office e descobrir qual é o email por
+                lá, é sempre {nome}. {sobrenome}@adventistas.org, o nome que estamos procurando é apenas o
+                {nome}.{sobrenome}, mas é importante anotar o email completo, quando chegar a hora, você saberá
+                exatamente o porquê!</li>
+            <li>Verifique o Backup: Isso é, Se Certifique de que tudo de importante está salvo em algum lugar seguro, o
+                mais comum nesse caso é a Nuvem do Onedrive, mas, existem casos e casos, pense, vai mudar o usuário? O
+                novo usuário precisa dos arquivos que estão salvos no usuário antigo? Existe algum arquivo que está não
+                está no Onedrive, mas vai ser necessário? O Segredo desse passo é pensar (e claro, verificar quando
+                possível) em cada um desses detalhes, o objetivo final sendo sempre ter certeza de que nenhum arquivo
+                necessário para o usuário será perdido. As vezes vale a pena salvar coisa demais (salvar fotos e
+                arquivos que você não sabe se são importantes ou não) que do que perder Isso é "Verificar o Backup"</li>
+        </ul>
+
+        <h3>Formatando</h3>
+        <p>Existem dois métodos principais para formatar um computador, um é pela função <b>Restaurar PC</b> e o outro é
+            usando o <b>Pendrive de Boot</b> não existe uma "opção superior a outra" cabe a você decidir qual é melhor
+            para cada contexto, pra te ajudar a decidir, vou te passar algumas informações importantes:
+        <ul>
+            <li>A opção <b>"Restaurar PC"</b> demora consideravelmente mais, porém (se tudo for feito corretamente), ela
+                é a opção mais segura porque:
+                <ul>
+                    <li>Com Ela não há Perigo do Computador Apagar a Licença do Windows acidentalmente, o que pode
+                        acontecer quando se usa o pendrive de boot</li>
+                    <li>Com essa opção, você não precisa se preocupar se o sistema requer UEFI ou Legacy, o que pode ser
+                        uma grande fonte de dor de cabeça... Se você não tivesse esse manual, vamos falar disso depois,
+                        mas se você optar por essa opção, não tem que se preocupar com esse detalhe.</li>
+                </ul>
+            </li>
+            <li>Naturalmente, quando usamos pendrive de boot, temos as vantagens e desvantagens opostas às listadas
+                acima</li>
+            <li>É importante lembrar que, falar de <b>pendrive de boot</b> é falar em instalar novamente o windows no
+                computador, sim, é um pouco mais rápido do que o "Restaurar PC"</li>
+            <li>E claro, se existe a necessidade de mudar a versão do Windows, a opção <b>"Pendrive de Boot"</b> é a
+                única, aqui no setor, nós tentamos deixar as máquinas mais atualizadas, então, se pegamos um computador
+                para fazer manutenção e vemos que ele tem uma versão antiga do Windows, mas ele é compatível com o
+                Windows 11, a prática comum é atualizar</li>
+            <li>Entretanto, é crucial que algumas coisas sejam levadas em conta:
+                <ul>
+                    <li>Se a máquina tiver apenas 4 GBs de RAM, Windows 11 não é uma opção, o site oficial da Microsoft
+                        diz que o Windows 11 Roda em 4 GBs, mas "ele vai sofrer" é melhor manter o 10 nesse caso</li>
+                    <li>Se a máquina tiver 8 GB de RAM, apenas certifique-se de que ela tenha um bom SSD também, porque,
+                        se o Disco for um HDD... Tendo apenas 8 GBs de RAM... É altamente provável que o computador terá
+                        dificuldades ao rodar o Windows 11 também, mas vale fazer um teste, principalmente se for um
+                        HDD, mas com MUITO espaço</li>
+                </ul>
+            </li>
+
+            <details class="sub_topico">
+                <summary><strong>Usando a Opção Restaurar PC</strong></summary>
+                <h4>Restaurar PC</h4>
+                <ol>
+                    <li>Vá Até as Configurações (Windows + I)</li>
+                    <li>Pesquise "Restaurar PC"</li>
+                    <li>Clique no Botão "Começar Agora"</li>
+                    <li>Em Seguida, Clique em "Remover Tudo</li>
+                    <li>Na Janela "Como você deseja reinstalar o Windows", clique em "Reintstalação Local"</li>
+                    <li>IMPORTANTE: Em "Configurações Adicionais" clique em "Alterar Configurações"</li>
+                    <li>Vai aparecer uma Janela com dois botões, (de Sim e Não), mude o primeiro (Limpar Dados) para SIM
+                        e deixe o segundo (Baixar o Windows) como <b>NÃO</b></li>
+                    <li>Clique em Confirmar e, agora você pode clicar em Avançar!</li>
+                    <li>A próxima janela tem um resumo com tudo que o processo vai fazer, segue o que precisa aparecer
+                        nela:
+                        <ul>
+                            <li>Remover todos os arquivos pessoais e de usuário deste computador</li>
+                            <li>Remova todas as Alterações feitas nas configurações</li>
+                            <li>Remover todos os apps e programas</li>
+                            <li>Reinstalar o Windows a partir deste dispositivo</li>
+                        </ul>
+                    </li>
+                    <li>Uma vez que você confirmar que está aparecendo tudo como descrito aqui, pode mandar Restaurar!
+                    </li>
+                    <li>Feito isso, NÃO MEXA EM MAIS NADA!!! Dei ênfase porque, qualquer coisa que você tentar fazer no
+                        computador enquanto esse processo é feito pode afetar o processo, por mais que, técnicamente,
+                        seja possível, NÃO FAÇA, já deu problema antes</li>
+                    <ul>
+                        <li>Vai aparecer que está "Preparando" e esse processo vai de 0 a 100%, mas costuma demorar mais
+                            em alguns momentos em relação a outros</li>
+                        <li>Ele vai fazer o mesmo trajeto de quando reinicia o computador, mas ao invés de ligar
+                            rapidamente, vai aparecer aquela tela que aparece assim que liga ele e, abaixo vai ter uma
+                            mensagem dizendo "Restaurando o PC" e uma porcentagem de progresso pra você acompanhar</li>
+                        <li>Em Seguida ele vai reiniciar novamente, em alguns casos, mais de uma vez, até chegar na tela
+                            onde vai dizer "instalando" isso pode acontecer algumas vezes, mas o Windows sempre te dá
+                            uma porcentagem, mesmo que as vezes nem dê tempo de ver nada</li>
+                        <li>Por fim, o Computador irá Reiniciar pela última vez, esse reiniciar parece normal, mas
+                            costuma demorar um pouco mais, vai aparecer a mensagem de "Bem Vindo" as vezes mais um
+                            "instalando" ou "atualizando" depende da máquina, o importante é que, você vai saber que deu
+                            certo quando aparecer a logo do Windows na tela!</li>
+                        </li>
+                </ol>
+                <br>
+                <p>Uma vez que a logo do windows aparecer, você pode saber que você concluiu com sucesso essa parte! O
+                    Windows vai te mandar diretamente pra próxima etapa, vamos para a parte II!!! :D</p>
+            </details>
+            <details class="sub_topico">
+                <summary><strong>Usando um Pendrive de Boot</strong></summary>
+                <h4>Pendrive de Boot</h4>
+                <p>Bem, antes de colocar o pendrive de boot, você precisa descobrir qual é o pendrive de boot adequado
+                    para o computador que você está configurando, UEFI? Legacy? Como saber? Bem, o resumo geral da coisa
+                    é, computadores com Hardware mais antigo vão usar o Legacy, mais novos, UEFI, mas é possível
+                    descobrir exatamente se é um ou outro, e na verdade, fazer isso é bem simples:</p>
+
+                <ol>
+                    <li>Abra o Menu Executar (Windows + R), digite msinfo32 e dê "Enter"</li>
+                    <li>Por padrão, a Janela que vai abrir jé está onde você quer, é a aba "Resumo do Sistema", onde há
+                        uma lista com duas colunas, uma chamada itens e outra chamada valores</li>
+                    <li>Procure o item "Modo da BIOS" e verifique o valor dele</li>
+                    <li>O Valor vai te dizer exatamente qual dos dois você precisa, se o valor for "UEFI"... Bem, é
+                        UEFI, se no entanto, o valor for "Herdado" significa que é Legacy, as vezes a
+                        própria palavra "Legacy" aparece também, mas normalmente, com o Sistema em Português, a palavra
+                        que aparece mais comumente ali é "Herdado". UEFI - UEFI | Herdado - Legacy</li>
+                    <li>Agora que você tem essa informação, você já sabe qual pendrive de boot usar :D</li>
+                    <li>Coloque o Pendrive de Boot no Computador em Questão</li>
+                    <li>Verifique se o computador está lendo o pendrive normalmente, se você consegue abrir a pasta com
+                        os conteúdos dele com o explorador de arquivos significa que está sim</li>
+                    <li>ATENÇÃO, NÃO MODIFIQUE NADA NESSA PASTA. Se ela aparece e abre, já pode desligar o computador
+                    </li>
+                    <li>Ligue novamente o computador, mas pressione F12 repetidas vezes para acessar as <b>configurações
+                            de Boot</b></li>
+                    <li>Se o computador ligar normalmente, significa que não deu certo, desligue novamente e tente com
+                        F7 ao invés de F12</li>
+                    <li>
+                        <details class="caso">
+                            <summary><b>Se Não der Certo Mesmo Assim</b></summary>
+                    <li>Desligue novamente e, ao ligar de novo, ao invés de F12, ou F7, aperte: F2, ou
+                        Del ou F10 (nessa ordem, o F2 é o mais comum e F10 o menos comum), isso abrirá a BIOS...</li>
+                    <li>Na BIOS, procure as configurações de Boot, existem enúmeras interfaces de BIOS, mas essa opção
+                        sempre existe, de um jeito ou de outro.</li>
+                    <li>Quando você encontrar essa opção, coloque o pendrive de boot como primeira opção na sequencia de
+                        Boot</li>
+            </details>
+            <li>Se você não sabe qual daqueles nomes estranhos é o seu pendrive, dê uma olhada na marca dele, os mais
+                comuns que nós temos aqui são o Kingston Data Traveler e o SanDisk CruzerBlade.
+            <li>Pronto, agora você pode seguir o passo-a-passo da instalação da interface do próprio windows</li>
+            <br>
+            <li><b>ATENÇÃO PARA OS SEGUINTES DETALHES:</b>
+                <ul>
+                    <li>Uma das primeiras coisas que vão aparecer aqui é a parte sobre configurar o Teclado,
+                        <b>lembre-se de mudar para ABNT2</b></li>
+                    <li>Não é para isso acontecer nessa etapa, mas fique ciente: Se aparecer qualquer coisa
+                        relacionada a conectar a conta da Microsoft nessa etapa DIGA NÃO!</li>
+                    <li>Quando chegar nas Partições, você saberá qual janela é a das partições porque aparece
+                        escrito em algum lugar da janela... Aqui vai o que você deve fazer com elas:
+                        <ol>
+                            <li>Sempre vai ter, no mínimo, um "Disco 0" e um "Disco 1", o Disco 0 costuma ser o
+                                o HD/SSD do computador que você está formatando e o Disco 1 é o pendrive de
+                                boot, mas preste atenção em detalhes como o <b>tamanho do disco</b>, o <b>nome do
+                                    disco</b>, bem como os nomes das partições dele, e a partir dessas informações
+                                perceba em qual disco você vai instalar o Windows, na maioria das vezes é o Disco 0, mas
+                                excessões podem acontecer!!</li>
+                            <li>Tendo identificado o Disco onde o Windows será instalado, apague todas as
+                                partições desse Disco, saiba que que, quando você apaga a partição, continua
+                                existindo algo que, pela interface se parece com uma partição, mas está rotulada
+                                com um "Não Alocado", isso significa que você excluiu com sucesso aquela partição e pode
+                                passar para a próxima partição desse disco</li>
+                            <li>CUIDADO PRA NÃO APAGAR NENHUMA PARTIÇÃO <b>DO PENDRIVE</b>, pra isso, redobre a atenção
+                                ao nome do pendrive, o nome da partição do pendrive, a marca dele, o tamanho dele,
+                                enfim, só pra evitar qualquer problema</li>
+                            <li>Quando o Disco no qual o windows será instalado estiver aparecendo como uma única
+                                partição "Não Alocada" selecione-a e clique em Avançar"</li>
+                        </ol>
+                    </li>
+                    <li>Ao selecionar qual edição do Windows (Pro, Education...) você quer instalar, se
+                        ceretifique de que você selecionará EXATAMENTE A MESMA que estava no computador antes,
+                        mesmo que você esteja atualizando do Windows 10 pro Windows 11, é importante que a
+                        edição (Education, Pro, Pro Education...) seja EXATAMENTE A MESMA, nem sempre é possível
+                        selecionar a versão, as vezes a licença fica salva na BIOS e o instalador já te
+                        redireciona pra confirmar.</li>
+                    <li>Ainda assim, nessa tela final, antes de confirmar, leia a versão confirme se ele puxou a
+                        versão correta antes de confirmar e iniciar o processo de instalação do Windows, se era
+                        "Enterprise" e virou "Pro" não tem problema, as vezes acontece mesmo, o real problema existe se
+                        aparecer Windows Home (ou alguma variação dele), porque nós não podemos usar o Home como
+                        computador de trabalho</li>
+                    <li>Quando a Instalação acabar, você será redirecionado para a parte de Configuração Inicial, parece
+                        que é tudo uma coisa só, mas não é, agora nós vamos
+                        para a próxima parte, rumo à Parte II!!</li>
+                </ul>
+            </li>
+    </details>
+    </details>
+
+    <details>
+        <summary>
+            <h2>II. Configuração Inicial</h2>
+        </summary>
+
+        <p>Essa parte parece ser bem intuitiva, mas, é importante tomar alguns cuidados, o principal aviso que eu
+            preciso deixar é:</p>
+        <p>dependendo da versão do windows que você está instalando, as coisas listadas aqui podem não aparecer
+            exatamente nessa Ordem, então, lembre-se de analisar
+            cuidadosamente o que está sendo pedido pra não colocar nada errado... A Microsoft gosta de colocar uns
+            truquezinhos que vão fazer você instalar coisas que você não quer, por isso eu recomendo a atenção extra :D
+        </p>
+        <ul>
+            <li><strong>IDIOMA:</strong> Na maioria das máquinas a primeira coisa que aparece é o idioma, mas
+                normalmente ele já está em português, então é só manter</li>
+            <li><strong>PAÍS/REGIÃO:</strong> É óbvio que você vai manter Brasil, isso é só pra você saber que vai ter
+                esse passo ao configurar :D</li>
+            <li><strong>LAYOUT DO TECLADO:</strong> Sempre coloca <b>ABNT2</b>, normalmente ele indica o ABNT por
+                padrão, mas,
+                a verdade é que não existem mais teclados ABNT, quando falamos de teclado ABNT hoje em dia, estamos nos
+                referindo ao ABNT2</li>
+            <li><strong>SEGUNDO LAYOUT:</strong> Ele sempre aparece, logo depois de configurar o teclado, pra você
+                configurar outro... Só clica em "Pular", pode parecer que ele está te mandando configurar duas vezes a
+                mesma coisa, ou que é algum tipo de confirmação, mas não é isso, pode pular sem hesitação!</li>
+            <li><strong>LICENÇA:</strong> Se aparecer pra aceitar o contrato da licença (ou alguma coisa nessas linhas)
+                é só clicar em aceitar... Não é como se tivesse escolha, esse contrato a gente precisa aceitar se a
+                gente quiser usar o Windows... Maas esse contrato não é nenhum tipo de "truque"</li>
+            <li><strong>REDE E INTERNET:</strong> Se você tiver esquecido de colocar o cabo de rede antes, esse passo
+                vai aparecer, pedindo para você se conectar, na falta de cabo de rede, dá pra colocar Wi-Fi também, mas
+                aqui vem um detalhe bem importante:
+                <ul>
+                    <li> versões mais antigas do windows é possível você pode só seguir em frente e conectar depois,
+                        clique em "não tenho internet"</li>
+                    <li> versões mais novas do windows, mais especificamente, a partir do Windows 11 - 25H2, não é mais
+                        possível seguir em frente sem internet, então conecte-se, mas preste atenção no que está falando
+                        no tópico <b>Conta da Microsoft</b></li>
+                </ul>
+            </li>
+            <li><strong>NOME DO COMPUTADOR:</strong> <b>(Isso nem sempre aparece)</b> E ATENÇÃO! Cuidado pra não
+                confundir
+                isso com o nome de <b>quem vai usar o computador</b>, esse é o nome da máquina! Se aparecer algo nas
+                linhas de "Qual é Seu Nome" ou "Nome de quem vai Usar/do Usuário". estamos falando de <b>outra coisa
+                    completamente diferente</b> não as confunda! O nome DO COMPUTADOR tem sempre o mesmo formato:
+                USB-IAP-{SETOR}-{NUMERO}, caso esse passo apareça, pode escrever o nome que a máquina terá, escreva no
+                formato acima</li>
+            <li><strong>PESSOAL OU DE EMPRESA:</strong> <b>(Nem Sempre isso Aparece)</b> Coloca como uso de empresa...
+                Faz pouca diferença a essa altura, mas é bom fazer isso pra evitar certas chatices da Microsoft</li>
+            <li><strong>CONTA DA MICROSOFT:</strong> Quando o computador está conectado à internet, o Windows vai tentar
+                te forçar a conectar uma conta da microsoft ao computador, isso é útil para computadores pessoais, mas
+                não é o nosso caso, nós não queremos isso! Só que o Windows não dá uma opção pra você só dizer não, pelo
+                menos, não tão diretamente... Aqui vai o que você tem que fazer: (Lembrando que, se você está instalando
+                uma versão mais antiga do windows, você provavelmente não terá que se preocupar com isso)
+                <ol>
+                    <li>Logo abaixo da caixa de texto que você colocaria o email, Vai aparecer uma opção MINÚSCULA (até
+                        parece que a Microsoft não quer que você veja isso ali) dizendo "Opções de Entrada", ou alguma
+                        coisa nessas linhas... Pois bem, é exatamente isso que a gente quer!</li>
+                    <li>Em seguida vão aparecer pelo menos duas opções distintas dependendo da versão do Windows, uma
+                        delas diz algo como "Detecção Facial, Impressão Digital, PIN..." e em alguns casos até tem
+                        outras coisas, mas a que nós queremos diz uma coisa bem mais simples, a opção "Ingresso no
+                        Domínio" ou "Entrar em um Domínio", clique nessa opção e o windows vai te deixar seguir em
+                        frente sem usar nenhuma conta da microsoft</li>
+                </ol>
+            </li>
+            <li><strong>NOME DO USUÁRIO:</strong>Se o Windows estiver perguntando "Qual é seu nome?" ou "Nome de quem
+                vai Usar" É o do Usuário, o nome que você vai colocar agora é "TI" (sim, com as letras maiúsculas)</li>
+            <li><strong>SENHA:</strong> Sempre depois do Nome do Usuário vai vir a parte pra você definir uma Senha, mas
+                não é pra definir nenhuma para esse usuário TI, <b>apenas clique em avançar sem digitar nada!</b></li>
+            <li><strong>NÃO NÃO E NÃO:</strong> <b>(Nem sempre isso aparece)</b> O nome desse passo pode parecer
+                estranho, mas, é bem preciso, uma das últimas coisas que vão aparecer antes de finalizar a configuração
+                inicial, aparece uma longa sequencia de permissões que a Microsoft quer que você aceite, mas eles tem a
+                obrigação legal de te deixar dizer não e é exatamente isso que você vai fazer, todas as caixas de
+                diálogo que aparecerem você vai clicar em "Não"/"Não Permitir"/"Não Aceitar"e depois no botão "Aceitar"
+                no canto inferior direito para passar pro próximo</li>
+            <li><strong>APENAS OBRIGATÓRIOS:</strong> Ainda faz parte da sequência, entre os "não não não" tem esse
+                sobre enviar dados de diagnóstico para a Microsoft, aqui não tem a opção de dizer não, então ao invés
+                disso, você vai em "Apenas Obrigatórios" e, se esse não for o último, continue dizendo não.</li>
+            <li>Quando Acabar os "Não Não Não", vai aparecer uma tela dizendo que está instalando, são 3 etapas que vão
+                até 100%, não costuma demorar muito, mas já aconteceram casos, não há com o que se preocupar aqui, não
+                precisa fazer nada, só espere e, saiba que as vezes o computador pode dar umas apagadas rápidas e
+                voltar, isso é normal</li>
+        </ul>
+        <p>Uma vez que você ver aquela tela do Windows dizendo que "está preparando tudo para você" Significa que deu
+            certo! Você terminou a Configuração Inicial! :D</p>
+    </details>
+
+    <details>
+        <summary>
+            <h2>III. Domínio</h2>
+        </summary>
+        <p>Pronto! Você conseguiu fazer a instalação e configuração inicial do Windows! Até aqui, muita coisa você
+            talvez já sabia e nem precisava de ajuda, mas agora, nós precisamos fazer um processo diferente do que você
+            está
+            acostumado se você apenas usa computadores pessoais, lembrando, tudo isso vai ser feito no usuário TI que
+            acabamos de criar! Enfim, vamos aos passos!</p>
+        <ol>
+            <li><strong>FIXANDO O DNS:</strong>
+                <p>Antes de mexer com domínio, é necessário realizar esse passo! NÃO ESQUEÇA DELE, não existe uma
+                    mensagem de erro clara quando você esquece dele, mas nada vai funcionar como esperado, por isso, é
+                    importante lembrar desse passo e, se você perceber que as coisas não estão funcionando como
+                    esperado, refazer o processo lembrando desse passo pode ser o que faltou! Bom, vamos lá, fazer isso
+                    no Windows 11 e no 10 é parecido, mas, é diferente o suficiente para eu distinguir eles aqui, então,
+                    selecione a versão que se aplica pro computador que você está configurando agora e siga os passos!
+                </p>
+
+                <details class="sub_topico">
+                    <summary><strong>Windows 10</Strong></summary>
+
+                    <ol>
+                        <li>Vá em Configurações de Rede, o jeito mais rápido é clicando no ícone onde está o wifi ou o
+                            símbolo da rede cabeada, vai aparecer "Configurações de Rede e Internet" no final da lista
+                            clique nessa opção</li>
+                        <li>Uma vez nas configurações, observe que no lado esquerdo tem algumas opções relacionadas a
+                            Rede e Internet, se você estiver conectado a rede cabeada, Clique na Opção "Ethernet", se
+                            for Wi=Fi, Wi-Fi</li>
+                        <li>Dentro da opção selecionada vai aparecer a rede na qual o computador está conectado,
+                            selecione-a</li>
+                        <li>Não muito longe do início da página aberta estão as "Configurações de IP"</li>
+                        <li>Abaixo de "Configurações de IP" vai aparecer a "Atribuição de IP que, por padrão, é
+                            "Automático (DHCP) precisamos mudar isso temporariamente, então, clique em "Editar"</li>
+                        <li>A única coisa que vai aparecer ao clicar em "Editar" é o "Automático (DHCP)", clique nisso e
+                            mude para "Manuais"</li>
+                        <li>Fazendo isso, vão aparecer duas opções que, por padrão estão desativadas, o IPV4 e o IPV6,
+                            ative o IPV4 (e ignore o IPV6)</li>
+                        <li>Ao ativar o IPV4, 5 espaços vazios preparados pra você digitar algo aparecerão, mas você só
+                            precisa realmente digitar algo em um desses espaços, no "DNS Preferencial"</li>
+                        <li>Coloque nesse espaço o seguinte IP: 10.11.80.3</li>
+                        <li>Agora é só clicar em salvar e esse passo está pronto, isso é "Fixar o DNS" :D</li>
+                    </ol>
+                </details>
+                <details class="sub_topico">
+                    <summary><strong>Windows 11</strong></summary>
+
+                    <ol>
+                        <li>Vá em "Configurações de Rede e da Internet", o jeito mais rápido é clicar com o botão
+                            direito na área onde fica o símbolo do Wi-Fi ou da Rede Cabeada no canto inferior direito da
+                            tela</li>
+                        <li>Vai aparecer bem visível na tela de configuração se você está conectado ao wifi ou à rede
+                            cabeada (Ethernet), vá na opção que condiz com o que o computador está conectado no momento,
+                            se for wif, clique em "Wi-Fi", se for Cabeado, clique em "Ethernet"</li>
+                        <li>Role o Scroll do Mouse até você encontrar a opção "Atribuição de Servidor DNS:" um pouco ao
+                            lado disso vai aparecer, por padrão "Automático (DHCP)" e um pouco mais ao lado, você vai
+                            encontrar a opção "Editar" é ela que você está procurando</li>
+                        <li>Em seguida, vai aparecer a tela "Editar configurações de DNS" e logo abaixo vai aparecer que
+                            está selecionado para ser automático, mude isso, clique em cima e mude para "Manuais"</li>
+                        <li>Feito isso, você irá se deparar com duas opções Desativadas, o IPV4 e o IPV6, ignore
+                            completamente o IPV6, apenas ative o IPV4</li>
+                        <li>Vai aparecer bastante coisa, mas você só precisa se preocupar com uma, o "DNS Preferencial",
+                            logo abaixo de onde está escrito "DNS Preferencial" tem uma caixa de texto vazia, você vai
+                            digitar nela o seguinte: 10.11.80.3</li>
+                        <li>Se certifique de que você colocou todos os números e pontos nos lugares certos e depois,
+                            pode clicar em Salvar, esse é o último passo, isso é "Fixar o DNS" :D</li>
+                    </ol>
+                </details>
+                <br>
+
+            <li><strong>COLOCANDO NO DOMÍNIO</strong>
+                <p>Com o DNS fixado, podemos finalmente colocar o computador no domínio, mas antes eu preciso avisar,
+                    pra colocar no domínio você precisa ter uma permissão específica, se você tiver essa permissão, você
+                    sabe do que eu estou falando, se não tiver, bom, não te foi dado permissão, então não é vergonha
+                    NENHUMA você pedir pra alguém colocar o usuário e a senha pra você</p>
+                <p>Mais uma vez, selecione o passo-a-passo certo para o sistema que você está configurando, Windows 10
+                    ou Windows 11</p>
+                <details class="sub_topico">
+                    <summary><strong>Windows 10</strong></summary>
+                    <ol>
+                        <li>Vá em Configurações, o jeito mais rápido é simplesmente apertando as teclas Windows + I</li>
+                        <li>Dentro das Confiugrações, vá em Sistemas>Sobre. Você encontrará a essa opção "Sobre" no
+                            painel esquerdo, é a última opção que tem ali</li>
+                        <li>Agora você precisa ir na opção "Renomear Computador", mas ATENÇÃO, tem duas opções com o
+                            mesmo nome nesssa tela, uma delas (a que aparece em um botão cinza) de fato vai apenas
+                            renomear a máquina, não é isso que você está procurando, mas SE VOCÊ NÃO TIVER CERTEZA
+                            ABSOLUTA que a máquina está com o nome certo, VÁ NESSA OPÇÃO PRIMEIRO, se certifique que o
+                            nome está correto, se não estiver, coloque o nome correto, o computador vai mandar
+                            reiniciar, reinicie e só depois volte para esse mesmo ponto</li>
+                        <li>Agora você pode procurar a opção com o mesmo nome (Renomear Computador), mas, não o botão
+                            cinza claro, o texto azul no lado direito da janela, ele é o último de uma lista de
+                            "Configurações Relacionadas"</li>
+                        <li>Isso vai abrir uma janela chamada "Propriedades do Sistema" com várias abas, mas você não
+                            precisa mudar a aba, na própria aba "Nome do Computador" tem a opção "Alterar..." é ela que
+                            você quer!</li>
+                        <li>Ali vai aparecer novamente o nome do computador e abaixo, a caixa "Membro De", dentro da
+                            qual tem as opções "Domínio" e "Grupo de Trabalho", você quer a opção "Domínio"</li>
+                        <li>Feito isso, na caixa de texto logo abaixo (que agora não está mais cinza), você vai escrever
+                            exatamente o seguinte: adventistas.local</li>
+                        <li>Quando você tiver certeza de que o nome está certinho, você pode clicar em "Ok", nesse
+                            momento vai aparecer aquilo sobre o usuário e a senha</li>
+                        <li>Chama alguém, alguém coloca as credenciais pra você e, se você tiver feito tudo certinho,
+                            vai aparecer uma nova janela dizendo "Bem Vindo ao Domínio adventistas.local" :D</li>
+                        <li>O Computador vai solicitar pra você Reiniciar pras alterações serem efetivadas, faça isso!
+                            Uma vez que o computador Reiniciar, está feito!!! :D</li>
+                        <li>Só, não esqueça de <b>Desfixar o DNS</b> uma vez que o computador esteja no domínio.</li>
+                        <li>Para fazer isso, siga os passos sobre como Fixar o DNS, mas, quando chegar naquela parte de
+                            tirar do Automático (DHCP), já vai estar "Manual" e agora você quer que volte para o
+                            "Automático (DHCP)"</li>
+                    </ol>
+                </details>
+                <details class="sub_topico">
+                    <summary><strong>Windows 11</strong></summary>
+
+                    <ol>
+                        <li>Vá em "Configurações", o jeito mais rápido é usando o atalho com as teclas Windows + I</li>
+                        <li>O Aplicativo de Configurações do Windows 11 tem o característico menu de opções no lado
+                            esquerdo da tela, nesse menu, procure por "Sistema"</li>
+                        <li>Em Sistemas, role pra baixo até a última opção que tem lá, a opção "Sobre", é ela que você
+                            quer</li>
+                        <li>Ali, você encontrará... Muita coisa, me permita te guiar, a primeira coisa é a caixa
+                            "Especificações do Dispositivo", onde você encontra o nome do computador, o processador, a
+                            RAM instalada, enfim... Logo abaixo disso, você vai encontrar as "Perguntas Frequentes" e,
+                            abaixo disso, em "Links Relacionados", finalmente você encontrará a opção "Domínio ou Grupo
+                            de Trabalho", que é exatamente o que você quer, clique aí!</li>
+                        <li>Clicar ali vai abrir a janela "Propriedades de Sistema", procure a opção "Alterar" na aba
+                            "Nome do Computador"</li>
+                        <li>Isso vai abrir uma janela onde vai aparecer o Nome do computador acima, se certifique que o
+                            computador já está com o nome que ele tem que ter, se não estiver, coloque o nome certo
+                            nesse passo, reinicie o computador e depois volte aqui para continuar!</li>
+                        <li>Na parte de baixo, (abaixo do nome do computador), tem uma caixa com o título: "Membro de" e
+                            dentro dela tem duas opções selecionáveis, "Domínio" e "Grupo" de trabalho, selecione
+                            "Domínio"</li>
+                        <li>Feito isso, você vai perceber que a uma caixa de texto foi liberada, é nela que você deve
+                            colocar o nome do domínio, então digite: adventistas.local e clique em "OK"</li>
+                        <li>Esse é o momento que, se você não tiver as credenciais, você pode, sem nenhuma vergonha
+                            pedir pra alguém colocar elas pra você.</li>
+                        <li>Feito isso é só dar os "Confirmar" ou "OK" até aparecer um prompt pra Reiniciar o
+                            computador, faça isso, uma vez que ele reiniciar, já estará no domínio!</li>
+                        <li>Só, pra finalizar, não se esqueça de Desfixar o DNS, para isso, siga os passos de como Fixar
+                            o DNS</li>
+                        <li>Para fazer isso, siga os passos sobre como Fixar o DNS, mas, quando chegar naquela parte de
+                            tirar do Automático (DHCP), já vai estar "Manual" e agora você quer que volte para o
+                            "Automático (DHCP)"</li>
+                    </ol>
+
+                </details>
+    </details>
+
+
+    <details>
+        <summary>
+            <h2>IV. Usuários</h2>
+        </summary>
+        <p>Essa é a última etapa de configuração que temos aqui, só o que falta fazer é habilitar o usuário
+            Administrador na máquina e por fim, adicionar o usuário da pessoa, ou do setor, pro qual a máquina está
+            indo, vejamos como se faz isso</p>
+
+        <ol>
+            <li><strong>HABILITANDO O USUÁRIO ADMINISTRADOR</strong>
+                <p>Lembrando que tudo o que você fez até aqui é no usuário TI que você criou no início, esse é o momento
+                    que, se você não tem acesso a senha de administrador, você tem total direito de chamar alguém pra
+                    colocar a senha pra você, sem nenhuma vergonha disso</p>
+                <ol>
+                    <li>Clique com o Botão Direito na logo do Windows, várias opções diferentes vão aparecer</li>
+                    <li>Procure pela Opção "Gerenciamento de Computador" atenção a esse nome, porque tem muitas opções
+                        com "Gerenciamento de" que podem confundir, você quer o de COMPUTADOR</li>
+                    <li>Você vai perceber que a Janela que aparece é dividida em 3 partes distintas, olhe a lista de
+                        opções que está na divisão esquerda da Janela e procure por "Usuários e Grupos Locais"</li>
+                    <li>Clicando ali, você vai ver duas pastas na região central, "Usuários" e "Grupos Locais", você
+                        quer a pasta "Usuários"</li>
+                    <li>Nela vão aparecer o Usuário TI, que você está usando no momento (não mexe nele ainda), vai
+                        aparecer uns nomes estranhos e vai aparecer "Administrador", isso é o que você quer!</li>
+                    <li>Clique com o Botão Direito nessa opção "Administrador", você vai se deparar com a Opção "Definir
+                        Senha", é ela que você está procurando</li>
+                    <li>Se você sabe a senha, coloque a senha, se não, reitero que você não deve se envergonhar de pedir
+                        pra alguém que tenha acesso colocar a senha, confirmar e dar o "OK", mas calma que ainda falta
+                        mais uma coisa (não deixa a pessoa com acesso ir embora ainda)</li>
+                    <li>Depois de Definir a senha, você vai voltar pra página que estava, (Onde aparece "Administrador,
+                        TI", etc.) Dessa vez, apenas clique em "Administrador".</li>
+                    <li>Vai aparecer uma janela com algumas caixas de texto, mas, o que você está procurando são as
+                        opções abaixo, com "Checkboxes" (aqueles quadrados que você marca ou desmarca), você precisa
+                        DESMARCAR a checkbox que diz "Conta Desativada"</li>
+                    <li>Ainda aqui, se certifique que, a única opção marcada é a opção "A Senha Nunca Expira", tendo
+                        certeza disso, pode clicar em "Aplicar" e depois em "OK"</li>
+                    <li>Agora você precisa excluir o Usuário TI, mas obviamente não dá pra fazer isso enquanto você está
+                        logado nele, então mude o usuário (Vá naquele menu onde você desligaria o computador, mas ao
+                        invés de clicar em desligar, clique em "Sair"</li>
+                    <li>Tendo saído, você pode logar com o Usuário Administrador, pra isso que você ainda precisa da
+                        pessoa com o acesso, peça pra essa pessoa colocar a senha pra você</li>
+                    <li>Agora você pode liberar a pessoa, e ir pro mesmíssimo lugar que você estava lá no Usuário TI
+                        agora a pouco (Gerenciamento do Computador>Usuários e Grupos Locais>Usuários</li>
+                    <li>Agora sim você pode Excluir o usuário TI, clique com o botão direito nele e selecione "Excluir",
+                        ele não pode ficar na máquina, entâo, pode confirmar todas as mensagens de alerta que
+                        aparecerem! Por fim, vá até a pasta Usuários (C:>Usuários), e Exclua a pasta TI também.
+                </ol>
+            </li>
+            <p>Uma Dica, antes de passar pra Próxima Etapa desse Segmento (Colocando o Usuário Final), dê uma olhada na
+                parte V do manual, instale todos os programas listados lá como "Do Administrador" dessa forma, você
+                evita precisar de alguém pra colocar a senha repetidas vezes pra você</p>
+
+            <li><strong>COLOCANDO O USUÁRIO FINAL</strong></li>
+            <p>Agora chegou o momento da gente colocar o usuário final da máquina! Isso na verdade é muito fácil!</p>
+            <ol>
+                <li>Saia do Usuário Administrador (De novo indo onde você desligaria o Computador, mas Clicando em
+                    "Sair")</li>
+                <li>Naquela tela de login vai aparecer no canto inferior esquerdo o usuário Administrador e a opção
+                    "Outro Usuário"</li>
+                <li>Clique em "Outro Usuário", vai aparecer uma caixa de texto para o nome e outra para a senha, é nesse
+                    momento que você precisa do nome que você anotou!</li>
+                <li>Escreva o nome na primeira caixa de texto no formato {nome}.{sobrenome}, por exemplo, fulano.detal,
+                    aqui você não precisa do email inteiro, apenas dos dois nomes!</li>
+                <li>Na Senha, você vai colocar a senha padrão de Usuários do Domínio do IAP, essa senha é "Iap@iasd"
+                    exatamente desse jeito, pode dar Enter</li>
+                <li>Se tudo der certo você vai ser encaminhado para uma tela com o Windows dizendo "Olá" "Estamos
+                    Preparando Tudo pra Você"</li>
+                <li>E uma vez que você se deparar com a área de trabalho do usuário novo é porque deu certo! E agora
+                    você está preparado para instalar os últimos programas específicos do usuário!</li>
+            </ol>
+            </li>
+
+    </details>
+
+    <details>
+        <summary>
+            <h2>V. Programas Padrão</h2>
+        </summary>
+        <p>Essa é a parte que você vai conferir mais! Afinal, com tantos programas, mesmo quem trabalha no setor a
+            bastante tempo e já decorou todos os passos e detalhes acima, tem chances de acabar esquecendo quais
+            programas instalar pra quais casos. Então vamos falar disso: Vamos separar os programas em 3 categorias.</p>
+        <br>
+        <p>Primeiro, uma dica: quando você baixar os programas, mantenha os arquivos .exe do setup (A Ferramenta que
+            instala as coisas no Windows) na pasta Downloads, assim, fica mais fácil de você lembrar o que você já
+            baixou e o que ainda está faltando, depois que você terminar de baixar todos (da categoria, ou de algum
+            passo que você organizou na sua mente), aí você pode excluir esses .exe, todos de uma vez.</p>
+        <br>
+        <br>
+        <details class="caso">
+            <summary>Se você não se sente seguro, essa explicação pode te ajudar</summary>
+            <p>A gente pode categorizar 3 tipos de Programas Padrão nos Computadores Windows da Instituição: Os de
+                Administrador, de Usuário e os Específicos, os dois primeiros tipos são instalados por padrão em
+                <b>Todos os Computadores</b>, já o terceiro, você precisa saber qual setor precisa de qual programa,
+                você nunca vai instalar <b>todos</b> os programas da terceira categoria, porque eles são específicos pra
+                certos setores ou certos computadores. Você pode começar instalando os de Administrador, mas, antes de
+                você passar pros de usuário (e portanto, antes de colocar o usuário final na máquina), se certifique de
+                que você já sabe qual é o setor e quais programas da categoria "Específicos" vão ser necessários,
+                porque, talvez você precise baixá-los e instalá-los pelo Usuário Administrador também e portanto, você
+                os instalará <b>Antes de Instalar os de Usuário</b>... Se você ainda não entendeu o que eu quero dizer
+                com "Instalar como Administrador" ou "Como Usuário", não se preocupe, vou dar uma explicação melhor
+                sobre isso antes de listar quais programas são de qual categoria</p>
+        </details>
+        <br>
+
+        <details class="sub_topico">
+            <summary><strong>Do Administrador</strong></summary>
+
+            <p>
+                Esse tipo de programa precisa ser instalado em todos os computadores, mas você os
+                instala a partir do usuário administrador, ou seja, antes de você entrar com o usuário final de quem vai
+                usar o computador, ainda no usuário administrador que você estava usando até agora, você vai instalar
+                esses programas, eles são do tipo que, uma vez instalados, qualquer usuário que for adicionado, vai ter
+                eles funcionando, então, aqui vai a lista:
+            </p>
+
+            <ul>
+                <li><strong>Google Chrome:</strong> A maioria dos usuários comuns vai preferir o Google Chrome como
+                    navegador padrão, então, essa é a primeira coisa que deve instalar. Link:
+                    https://www.google.com/intl/pt-BR/chrome/ lembre-se de desmarcar a checkbox
+                    <details class="caso">
+                        <summary>Explicação Detalhada</summary>
+                        <ol>
+                            <li> Clique no link acima, ele vai abrir pelo Microsoft Edge, o que é ruim, mas você ainda
+                                não tem a opção melhor.</li>
+                            <li>Antes de clicar no grande botão para baixar, <b>desmarque a checkbox</b> que aparece
+                                convenientemente discreta logo abaixo do grande botão visível e intuitivo.</li>
+                            <li>Agora sim, pode apertar o botão.</li>
+                            <li>Execute o arquivo .exe que você baixou, não tem nada pra mudar no setup (na interface de
+                                instalação do windows)</li>
+                            <li>Antes de seguir pro próximo programa, coloque o Google Chrome como navegador padrão (só
+                                abrir o Chrome pela primeira vez já vai aparecer essa opção) agora, sinta a liberdade de
+                                não se estressar com o Edge</li>
+                        </ol>
+                    </details>
+                </li>
+
+                <li><strong>CPU-Z:</strong> Só lembre de desmarcar a última checkbox antes de concluir. Link:
+                    https://www.cpuid.com/softwares/cpu-z.html
+                    <details class="caso">
+                        <summary>Explicação Detalhada</summary>
+                        <ol>
+                            <li>Se certifique que você está baixando pelo site certo, o site do CPUID e, se você usou o
+                                link acima, não se preocupe com isso.</li>
+                            <li>Desça a página até achar o botão "Setup English" (Entre inglês e chinês, que são as duas
+                                opções, inglês pelo menos usa o alfabeto com o qual a gente está acostumado)</li>
+                            <li>Novamente é só executar o .exe. Mas tem um detalhezinho no final!</li>
+                            <li>Fique de olho que no último passo do setup, tem uma checkbox já marcada falando algo nas
+                                linhas de "abrir {algumaCoisa}.txt", desmarque essa caixa e pode finalizar, ela vai
+                                abrir um readme que parece uma mensagem de erro, o que pode ser confuso, mas se você
+                                esquecer, apenas feche o bloco de notas que foi aberto.</li>
+                        </ol>
+                    </details>
+                </li>
+
+                <li><strong>VLC:</strong> Se você pesquisar no Chrome "VLC Download", teoricamente é o primeiro link,
+                    mas, pra que dificultar? Link: https://www.videolan.org/, não precisa alterar nada no setup</li>
+                    <details class="caso">
+                        <summary>Explicação Detalhada</summary>
+                        <ol>
+                            <li>Acesse o Link acima e, pode clicar no grande botão que diz "Baixar VLC"</li>
+                            <li>Espere alguns segundos até ele baixar o arquivo e, uma vez que baixar, pode executar ele</li>
+                            <li>Vai aparecer uma janela pequena com as opções de linguagem, mas, na maioria das vezes, "Português Brasileiro", se esse não for o caso, mude pra Portugês Brasileiro</li>
+                            <li>Pode clicar em Avançar ou em Próximo até o final, não precisa mudar nada no meio do caminho</li>
+                            <li>Antes de Finalizar, só desmarque a checkbox que vai fazer o VLC abrir, você não precisa que ele abra agora</li>
+                        </ol>
+                    </details>
+
+                <li><strong>7Zip:</strong> Nunca aconteceu de eu pesquisar "7Zip" no Chrome e o lugar certo não ser o
+                    primeiro resultado, mas, por que não? Link: https://www.7-zip.org/</li>
+                    <details class="caso">
+                        <summary>Explicação (desnecessariamente) Detalhada</summary>
+                        <p>Nâo se sinta julgado por ter aberto isso... Talvez um pouquinho se você já trabalha no TI a anos, mas no início aquela página do link pode ser confusa, eu só acho a explicação "desnecessariamente" Detalhada porque, além daquela página, não tem quase nada de detalhe pra adicionar aqui e, tenho certeza que, na próxima vez você vai se lembrar direitinho :D</p>
+                        <ul>
+                            <li>Acessando o Link acima, você vai se deparar com uma página bastante rudementar com 3 botões de download distintos</li>
+                            <li>Cada um daqueles downloads serve para um tipo de computador diferente, essa é a parte que eu suponho que te fez abrir essa explicação</li>
+                            <li>A grande verdade é que a probabilidade de você usar qualquer um dos dois links de baixo é quase nula!</li>
+                            <li>Talvez aconteçam casos que você terá que usar o terceiro link (ou o segundo da segunda tabela), isso acontece se o computador que você está configurando tiver arquitetura arm64, (pergunte pra alguém pra ter certeza, mas... Na maioria das vezes não é)</li>
+                            <li>No final das contas, você realmente só vai clicar no primeiro botão de download da primeira tabela, feito isso...
+                                <ol>
+                                    <li>Abra o arquivo que você acabou de baixar</li>
+                                    <li>Clique em "Install"</li>
+                                    <li>Acabou, sim, é só isso, viu só? Esse é bem simples :D</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </details>
+
+                <li><strong>Java:</strong> Lembre-se de se certificar que você está no site oficial da Oracle. Link: https://www.java.com/pt-BR/</li>
+                <details class="caso">
+                    <summary>Como Instalar</summary>
+                    <ol>
+                        <li>Acesse o Link que clique no botão "Download de Java para Desktops"</li>
+                        <li>Isso te leva para uma outra página que tem um botão escrito a mesmíssima coisa, pode clicar nele</li>
+                        <li>Isso vai finalmente baixar o setup, tendo baixado, pode executar</li>
+                        <li>Pode clicar em Instalar ele já vai começar o processo aí</li>
+                        <li>E acabou de novo!! Bem tranquilo também :D</li>
+                    </ol>
+                </details>
+
+                <li><strong>Anydesk:</strong> O primeiro resultado ao pesquisar apenas "Anydesk" no Google já é o que
+                    você está procurando, só clicar em "Baixe Agora", o site oficial é o anydesk.com, só um detalhe
+                    importante,
+                    the anydesk tem uma interface de setup diferente, parece que o programa já foi instalado quando você
+                    abre o
+                    .exe, mas você vai perceber que uma das opções dentro do programa é "Instalar o Anydesk" só depois
+                    disso ser
+                    concluido você realmente vai ter instalado ele, quando você abrir o Anydesk novamente, a janela é
+                    quase
+                    idêntica, mas não tem mais a opção supracitada, isso significa que deu certo!</li>
+
+                <li><strong>Lightshot:</strong> Esse é um dos mais fáceis e rápidos que tem novamente o primeiro
+                    resultado
+                    que você encontra ao pesquisar "Lightshot" no Google já é o certo, o nome que aparece é "Lightshot -
+                    screenshot tool for mac & win", se você achou isso, você achou esse resultado, já sabe que é o
+                    certo!
+                    Clicando nele vai aparecer uma janela com dois botões, "Download para Windows" e "Download para
+                    Mac"...
+                    Advinha qual você vai clicar... (Para Windows), tendo baixado o arquivo, execute o setup que você
+                    abre
+                    pelo .exe que você acabou de baixar, a interface dele é a mais simples de todas aqui, quando tiver
+                    pronto, você vai ter certeza quando o ícone do Lightshot aparecer entre os Ícones Ocultos da Barra
+                    de
+                    Tarefas (aqueles ícones que só aparecem quando você clica naquele ^ que tem na barra de tarefas, do
+                    lado
+                    da Bateria, da Hora, etc.)</li>
+
+                <li><strong>Adobe Acrobat Reader:</strong> Se o Lightshot era bem fácil, esse é o mais chato, parece que
+                    o
+                    Adobe quer ficar empurrando a força pra gente baixar coisas que a gente não quer... Mas só o que
+                    você
+                    precisa é atenção... Novamente o site oficial é o primeiro resultado de pesquisar "Adobe Acrobat
+                    Reader"
+                    no google, é o próprio get.adobe.com, mas <b>ATENÇÃO</b> logo de cara vai aparecer um botão dizendo
+                    "Baixar Acrobat Reader" antes mesmo até de você ver que, mais abaixo, tem duas Checkboxes já
+                    marcadas, deixar elas marcadas significa que você deixa ele baixar mais dois programas além do
+                    Acrobat Reader, um deles é o infame McAffee, então, antes de você clicar no botão pra baixar o .exe,
+                    <b>desmarque essas duas checkboxes!</b> Agora sim, pode clicar no botão quee agora está tudo certo,
+                    tendo baixado o .exe você pode executar ele e ver o progresso, demora um pouco,
+                    mas eventualmente ele termina... Se você se esquecer de desmarcar as checkboxes, depois de terminar
+                    a instalação do Reader, ele vai começar a do McAffee, seguida de mais um outro... Se chegou a esse
+                    ponto não há o que você possa fazer a respeito para impedir a instalação deles, agora você vai
+                    deixar eles dois instalarem e depois desisntalar eles do jeito normal, felizmente, apesar de ser
+                    chato, é possível, só ir no Painel de Controle>Desinstalar Programa, acha o McAffee, na lista e...
+                    Talvez você precise ir para as opções de programas dentro de "Configurações" para achar o outro, mas
+                    ele está lá, desinstale-o também.</li>
+            </ul>
+        </details>
+
+        <details class="sub_topico">
+            <summary><strong>Do Usuário</strong></summary>
+
+            <p>
+                Esse tipo também precisa ser instalado em todos os computadores, mas aqui você você
+                precisa fazer a instalação a partir do Usuário de quem vai usar o computador e não do Administrador,
+                tentar
+                instalar esses programas pelo administrador fará você ter o dobro do trabalho, porque eles não vão
+                aparecer
+                no usuário depois e vai ter que instalar de novo ;)
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Whatsapp:</strong> Baixe pela Microsoft Store, é mais rápido do que baixar um arquivo da
+                    internet que vai puxar o instalador da Microsoft Store ;)
+                </li>
+
+                <li>
+                    <strong>Office 365:</strong> Link: https://www.office.com/ - Instalar o Office pode ser frustrante com tudo que a Microsoft quer que você "engula" você pode bem ver que só entrar nesse link já te puxa pro Copilot, como usar as coisas boas sem instalar as ruins junto? Melhor explicar com Passo a Passo :D
+                    <details class="caso">
+                        <summary>O que é Office?</summary>
+                        <p>O Office é o conjunto de Serviços da Micrsoft que englobam o Word, o Power Point, o Excel, e até o Teams, que é muito importante quando falamos de Office, nos
+                        Referimos a todos os Programas do Office, desde Word, Excel e Power Point até Microsoft Teams, o problema é que agora coisas como o Copilot (IA da Microsfot) também fazem parte e... Agora a Microsoft quer que o Copilot seja o "Menu Inicial" pras coisas que a gente realmene quer, então temos que tomar cuidado pra não deixar assim, pra isso temos o passo abaixo :D</p>
+                    </details>
+                    <details class="caso">
+                        <summary>Passo a Passo</summary>
+                        <ol>
+                            <li>Acesse o Link acima que te dá as boas vindas ao Microsoft CoPiLot 365 (eles querem que o Copilot seja o menu inicial, fazer o que...)</li>
+                            <li>Clique no Botão "Entrar" e faça o login com o email do usuário e a senha padrão, aqui você precisa da coisa completa, isso é {nome}.{sobrenome}@adventistas.org ou @iap.org.br, depende da época</li>
+                            <li>Ele vai te perguntar se você deseja configurar a segurança, você não tem como seguir em frente sem dizer sim, então diga sim, mas, quando chegar na tela pedindo pra configurar número de telefone, email de restauração, e mais uma quantidade enorme de dados, desça até o final da página e clique na opção "pular"... Isso pode voltar antes de você conseguir logar, <b>PULE TODA A VEZ</b>, é insuportável, mas a Microsoft quer desesperademente os seus dados, os meus dados e os dados do mundo inteiro, não vamos passar esses dados!! (Fora que configurar isso vai gerar problemas tanto pro usuário quanto pro nosso setor depois)</li>
+                            <li>(...)</li>
+                        </ol>
+                    </details>
+                </li>
+
+                <li>
+                    <strong>One Drive:</strong> Ao contrário do Office, o Onedrive <b>sempre está instalado no
+                        computador</b>, então só o que você precisa fazer é ativar ele, e você faz isso usando a mesma
+                    conta
+                    do usuário que está nesse computador, mesmo email, senha padrão, você vai saber que deu certo quando
+                    aparecer aquela janela tentando te puxar pro "Tour" pelo One Drive, o quel você pode rejeitar sem
+                    problemas. E, se o Usuário for de alguém que já estava usando antes (só trocou de computador, ou
+                    formatou pra fins de manutenção, etc.) você vai ver também que várias pastas e outros arquivos vão
+                    aparecer na própria área de Trabalho, isso significa que deu certo também!
+                </li>
+            </ul>
+        </details>
+        <h4>Padrão de Setores ou Computadores:</h4> Esse tipo você NÃO INSTALA em TODOS os computadores, eles são
+        padrão para determinados setores, você só vai conferir essa parte da lista se você estiver configurando um
+        computador para os respectivos setores ;)
+        </li>
+        <ul>
+            <li><strong>TOTVS</strong></li>
+            <li><strong>APS</strong></li>
+            <li><strong>AASI</strong></li>
+            <li><strong>Adobe Creative Cloud</strong></li>
+            <li><strong>Abares</strong></li>
+            <li><strong>Lenovo System Update</strong></li>
+            <li><strong>Nvidia App</strong></li>
+        </ul>
+        </ul>
+    </details>
+</body>
+
+
+</html>

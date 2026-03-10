@@ -1,0 +1,199 @@
+html {
+    overflow-y: scroll; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: white;
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 1.25rem 1.25rem; 
+    background-color: #222222;
+}
+
+/* --- 2. NAVEGAÇÃO (DESIGN ORIGINAL COM CORREÇÃO DE POSIÇÃO) --- */
+.menu-manuais {
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #1b89d377;
+    padding: 15px 0;
+    margin-bottom: 2rem;
+    border-radius: 0 0 10px 10px;
+    position: relative; /* Necessário para o botão de sair se guiar */
+    width: 100%;
+}
+
+.menu-manuais ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center; /* Mantém Home, Novidades e Links no centro */
+    align-items: center;
+    gap: 20px;
+    position: relative; /* Base para o botão sair */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu-manuais a {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-manuais a:hover, 
+.menu-manuais a.active {
+    color: white;
+    background-color: #1b89d377;
+}
+
+/* --- 3. BOTÃO SAIR (FIXADO À DIREITA) --- */
+.item-sair {
+    position: absolute;
+    right: 15px; /* Joga a imagem para o canto direito da nav */
+    display: flex;
+    align-items: center;
+}
+
+.btn-sair-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px !important;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-sair-img img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: invert(1) brightness(2); /* Torna o ícone preto em branco */
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.btn-sair-img:hover {
+    background-color: rgba(255, 77, 77, 0.2) !important;
+}
+
+.btn-sair-img:hover img {
+    opacity: 1;
+    filter: invert(1) brightness(2) drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+    transform: scale(1.1);
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 2.5rem;
+    color: #ffffff;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.boas_vindas {
+    background-color: #ffffff0a; 
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #333;
+    margin: 0 auto 1rem auto;
+    max-width: 45rem;
+    text-align: justify;
+    font-style: italic;
+    color: #cccccc;
+    border-left: 4px solid #ffffff;
+}
+
+p.boas_vindas {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.efeito-revelar {
+    display: inline-block;
+    animation: revealText 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.timeline {
+    margin-top: 3rem;
+    border-left: 3px solid #1b89d377; 
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #1b89d3;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #1b89d3;
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    color: #1b89d3;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.timeline-content {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-right: 4px solid transparent;
+    transition: 0.3s ease;
+}
+
+.timeline-content:hover {
+    background-color: #282828;
+    border-right-color: #1b89d3; 
+    transform: translateX(8px);
+}
+
+.timeline-content h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.timeline-content p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin: 8px 0;
+    font-style: normal; 
+}
+
+.badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge-novo { background: #1b89d3; color: #fff; }
+.badge-update { background: #2ecc71; color: #fff; }
+.badge-fix { background: #e74c3c; color: #fff; }
+
+@keyframes revealText {
+    0% { opacity: 0; transform: translateY(20px); filter: blur(10px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}

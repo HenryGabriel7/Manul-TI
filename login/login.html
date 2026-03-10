@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Portal de TI</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>
+            <span class="efeito-revelar">Portal de TI</span>
+        </h1>
+        <p class="subtitle">Acesse a Central de Documentação</p>
+
+        <form class="login-form">
+            <div class="input-group">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" placeholder="Digite seu usuário" required>
+            </div>
+
+            <div class="input-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha" required>
+            </div>
+
+            <div id="error-message" class="login-error" style="display: none; color: #ff4d4d; margin-bottom: 1rem; font-size: 0.9rem; border-left: 3px solid #ff4d4d; padding-left: 10px;"></div>
+
+            <button type="submit" class="btn-login">Entrar</button>
+        
+        </form>
+    </div>
+</body>
+</html>
