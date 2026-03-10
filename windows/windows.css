@@ -49,12 +49,9 @@ body {
     background-color: #1b89d377;
 }
 
-/* --- BOTÃO SAIR (FIXADO À DIREITA) --- */
 .item-sair {
     position: absolute;
-    right: 15px; /* Alinhado à extrema direita da nav */
-    top: 50%;
-    transform: translateY(-50%); /* Centraliza verticalmente na barra */
+    right: 15px; /* Joga a imagem para o canto direito da nav */
     display: flex;
     align-items: center;
 }
@@ -233,3 +230,4 @@ h1 + br + p {
     margin-bottom: 0; 
     border-bottom-left-radius: 0;
 }
+
