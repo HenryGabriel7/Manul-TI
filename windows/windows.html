@@ -7,6 +7,16 @@
     <title>Protocolo Padrão Configuração de Computadores</title>
     <link rel="stylesheet" href="windows.css">
     <script src="windows.js"></script>
+    
+    <script>verificarAcesso();</script>
+    <script>document.addEventListener('click', function(e) {
+    if (e.target.closest('summary')) return;
+    const d = e.target.closest('details[open]');
+    if (d) {
+        d.removeAttribute('open');
+    }
+});</script>
+    
 </head>
 
 <body>
@@ -784,3 +794,4 @@
 
 
 </html>
+
