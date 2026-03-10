@@ -1,20 +1,24 @@
-/* --- 1. AJUSTES GERAIS --- */
+/* --- 1. RESET E ESTRUTURA BASE --- */
+* {
+    box-sizing: border-box; /* Garante que o padding não "estoure" a largura */
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: white;
     max-width: 50rem;
     margin: 0 auto;
-    padding: 0 1rem 1.25rem 1rem; /* Ajustado para não colar nas bordas */
+    padding: 0 1rem 2rem 1rem;
     background-color: #222222;
 }
 
-/* --- 2. NAVEGAÇÃO RESPONSIVA --- */
+/* --- 2. NAVEGAÇÃO (ESTILO PORTAL) --- */
 .menu-manuais {
     background-color: #1a1a1a;
     border-bottom: 2px solid #1b89d377;
     padding: 10px 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     border-radius: 0 0 10px 10px;
     width: 100%;
 }
@@ -22,99 +26,117 @@ body {
 .menu-manuais ul {
     list-style: none;
     margin: 0;
-    padding: 0 10px;
+    padding: 0 15px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* Importante para não quebrar em telas pequenas */
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    flex-wrap: wrap; /* Essencial para celulares pequenos */
 }
 
 .menu-manuais a {
     color: #cccccc;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.85rem;
-    padding: 6px 10px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
-.item-sair {
-    display: flex;
-    align-items: center;
+.menu-manuais a:hover, .menu-manuais a.active {
+    color: white;
+    background-color: #1b89d377;
 }
 
-/* --- 3. CONTEÚDO TÉCNICO (DETAILS E LISTAS) --- */
+.btn-sair-img img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1) brightness(2);
+    vertical-align: middle;
+}
+
+/* --- 3. TEXTOS E CABEÇALHOS --- */
+h1 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.boas_vindas {
+    background-color: #ffffff0a;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #ffffff;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: #cccccc;
+    text-align: justify;
+}
+
+/* --- 4. ACORDEÕES (DETAILS / SUMMARY) --- */
 details {
     background-color: #277db677;    
     border-left: 0.25rem solid #1b89d3;
     border-radius: 0.3rem;
     margin-bottom: 0.8rem;
     padding: 1rem;
+    transition: all 0.3s ease;
 }
 
-/* Ajuste de recuo para listas e parágrafos internos */
-details p, details ul, details ol {
-    padding: 0.5rem 0.5rem 0.5rem 1rem; /* Reduzido para ganhar espaço no mobile */
-    margin: 0.5rem 0;
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
 }
 
-/* Estilo para os sub-tópicos (azul mais escuro) */
+details h2 {
+    display: inline;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Estilo para sub-tópicos internos */
 .sub_topico {
     background-color: #1c618f77;
+    border-left-color: #33a6f3;
     margin-top: 10px;
 }
 
-h1 {
-    text-align: center;
-    font-size: 1.8rem; /* Tamanho adaptável */
-    text-transform: uppercase;
-    margin: 1.5rem 0;
+/* Ajuste de listas dentro dos manuais */
+details ul, details ol {
+    padding-left: 1.5rem;
 }
 
-.boas_vindas {
-    background-color: #ffffff0a;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border-left: 4px solid #ffffff;
-    font-style: italic;
-    font-size: 0.95rem;
-    text-align: left; /* Melhor para leitura técnica */
+details li {
+    margin-bottom: 10px;
 }
 
-/* --- 4. MEDIA QUERIES (A MÁGICA PARA CELULAR) --- */
+/* --- 5. RESPONSIVIDADE (MOBILE) --- */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.4rem;
-    }
-
-    /* Reduz o recuo excessivo de listas em telas pequenas */
-    details p, details ul, details ol {
-        padding-left: 0.5rem;
-        font-size: 0.9rem;
-    }
-
-    /* Ajuste para listas numeradas não ficarem fora da tela */
-    ol, ul {
-        padding-left: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .menu-manuais a {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         padding: 5px 8px;
     }
-}
 
-@media (max-width: 480px) {
-    /* Esconde o texto "Home/Windows" se quiser usar apenas ícones, 
-       ou apenas diminui a fonte ao extremo */
-    .menu-manuais ul {
-        gap: 5px;
+    /* Reduz o recuo lateral para o texto não ficar espremido no celular */
+    details {
+        padding: 0.8rem;
     }
-    
-    details summary h2 {
-        font-size: 1.1rem;
+
+    details p, details li {
+        font-size: 0.95rem;
+        padding-left: 0;
+    }
+
+    .boas_vindas {
+        text-align: left;
+        padding: 1rem;
     }
 }
