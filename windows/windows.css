@@ -218,57 +218,70 @@ h1 + br + p {
 
 @media (max-width: 768px) {
     body {
-        padding: 0 10px 10px 10px;
+        padding: 0 15px 15px 15px; /* Margem suave nas bordas do celular */
     }
 
-    /* 1. Nav mais fina e elegante */
+    /* 1. Navegação (Mantida conforme você gostou) */
     .menu-manuais {
         padding: 10px 0;
         margin-bottom: 1.5rem;
     }
 
-    /* 2. Mantém os itens LADO A LADO no mobile */
     .menu-manuais ul {
-        flex-direction: row; /* Garante que fiquem na horizontal */
+        flex-direction: row;
         justify-content: center;
-        gap: 8px; /* Espaço reduzido entre os links */
+        gap: 8px;
         padding: 0 10px;
-        flex-wrap: wrap; /* Se a tela for MUITO pequena, eles quebram linha suavemente */
+        flex-wrap: wrap;
     }
 
-    /* 3. Links menores para caberem melhor */
     .menu-manuais a {
         font-size: 0.85rem;
         padding: 6px 10px;
     }
 
-    /* 4. Reposiciona o botão Sair para não quebrar o layout */
     .item-sair {
-        position: relative; /* Sai do absolute para não sobrepor */
+        position: relative;
         right: 0;
         margin-left: 5px;
     }
 
-    .btn-sair-img img {
-        width: 18px; /* Ícone um pouco menor no mobile */
-        height: 18px;
-    }
-
-    /* 5. Ajuste dos cards para não ficarem gigantes */
-    .container-manuais {
-        grid-template-columns: 1fr; /* Um card por linha no celular */
+    /* 2. Melhoria Crítica de Leitura (Onde estava o problema) */
+    h1 {
+        font-size: 1.6rem;
         padding: 0 10px;
     }
 
-    /* 6. Textos de boas-vindas */
-    h1 {
-        font-size: 1.6rem;
+    h1 + br + p, h1 + br + p + p {
+        padding: 1.2rem; /* Padding reduzido para o texto respirar */
+        font-size: 1rem;
+        text-align: left; /* Justificado no mobile costuma criar buracos brancos feios */
+        border-left-width: 3px; /* Borda mais fina para sobrar espaço */
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    h1 + br + p, h1 + br + p + p {
-        padding: 1rem;
+    /* Ajuste nos Acordeões (Details) para não esmagar o conteúdo */
+    details {
+        padding: 0.8rem; /* Menos padding lateral */
+    }
+
+    details p, 
+    details ul, 
+    details li {
+        padding: 0.5rem 0.8rem; /* Reduzi drasticamente os 2rem originais */
         font-size: 0.95rem;
-        text-align: left;
+        line-height: 1.5;
+    }
+
+    /* Ajuste na Timeline (se estiver usando) */
+    .timeline {
+        margin-left: 5px;
+        padding-left: 15px;
+    }
+
+    .timeline-content {
+        padding: 1rem;
     }
 }
 
