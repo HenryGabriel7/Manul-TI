@@ -103,17 +103,26 @@ h1 {
     padding-bottom: 5px;
 }
 
-.efeito-revelar {
-    display: inline-block;
-    opacity: 0;            
-    transform: translateY(20px); 
-    filter: blur(5px);     
-    animation: revealText 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+/* --- ADICIONE ISSO PARA O EFEITO FUNCIONAR --- */
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
 }
 
-@keyframes revealText {
-    0% { opacity: 0; transform: translateY(20px); filter: blur(10px); }
-    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+/* --- VERIFIQUE SE A SUA CLASSE ESTÁ ASSIM --- */
+.efeito-revelar {
+    display: inline-block;
+    opacity: 0; 
+    /* O nome aqui DEVE ser igual ao do @keyframes acima */
+    animation: revealText 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 h1 + br + p, 
@@ -259,4 +268,5 @@ details p {
         text-align: left;
     }
 }
+
 
