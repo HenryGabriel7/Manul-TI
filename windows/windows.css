@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -265,10 +269,21 @@ h1 + br + p {
         font-size: 1.6rem;
     }
 
-    h1 + br + p, h1 + br + p + p {
-        padding: 1rem;
+   h1 + br + p, 
+    h1 + br + p + p {
+        padding: 1rem; /* Diminuído */
         font-size: 0.95rem;
-        text-align: left;
+        text-align: left; /* Justificado no mobile costuma esmagar palavras */
+        margin: 0 10px 1rem 10px; /* Garante que não cole nas bordas da tela */
+        width: auto; /* Força a largura a ser flexível */
+    }
+
+    /* Melhora o espaçamento interno dos menus expansíveis no mobile */
+    details {
+        padding: 0.8rem;
+    }
+    
+    details p, details ul, details li {
+        padding: 0 0.5rem; /* Quase nenhum recuo lateral para priorizar o texto */
     }
 }
-
