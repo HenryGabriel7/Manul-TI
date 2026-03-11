@@ -114,7 +114,7 @@ details li {
     border: none !important;
     margin: 0.5rem 0;
     padding-left: 0.5rem;  
-    padding: 0rem 2rem; 
+    padding: 0rem 0.8rem; 
 }
 
 details[open], 
@@ -271,3 +271,4 @@ h1 + br + p {
         text-align: left;
     }
 }
+
